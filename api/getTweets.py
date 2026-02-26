@@ -18,7 +18,9 @@ SESSION_CONFIG = {
 }
 # ================================================================
 
-def make_home_timeline_request(config = SESSION_CONFIG):
+def make_home_timeline_request(config=None):
+    if config is None:
+        config = SESSION_CONFIG
     # This specific endpoint uses GET with URL parameters
     url = "https://x.com/i/api/graphql/MpnCeE0hy8m5eWobPx8euw/HomeTimeline"
 
@@ -71,23 +73,23 @@ def make_home_timeline_request(config = SESSION_CONFIG):
 
     headers = {
         "accept": "*/*",
-        "authorization": f"Bearer {config['auth_bearer']}",
+        "authorization": f"Bearer {config.get('auth_bearer', '')}",
         "content-type": "application/json",
         "referer": "https://x.com/home",
-        "user-agent": config['user_agent'],
-        "x-csrf-token": config['csrf_token'],
-        "x-client-transaction-id": config['client_transaction_id'],
+        "user-agent": config.get('user_agent', ''),
+        "x-csrf-token": config.get('csrf_token', ''),
+        "x-client-transaction-id": config.get('client_transaction_id', ''),
         "x-twitter-active-user": "no",
         "x-twitter-auth-type": "OAuth2Session",
         "x-twitter-client-language": "en",
     }
 
     cookies = {
-        "auth_token": config['auth_token'],
-        "ct0": config['csrf_token'],
-        "twid": config['twid'],
-        "guest_id": config['guest_id'],
-        "__cf_bm": config['cf_bm_cookie'],
+        "auth_token": config.get('auth_token', ''),
+        "ct0": config.get('csrf_token', ''),
+        "twid": config.get('twid', ''),
+        "guest_id": config.get('guest_id', ''),
+        "__cf_bm": config.get('cf_bm_cookie', ''),
     }
 
     # Use GET request for this specific endpoint

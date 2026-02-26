@@ -1,318 +1,318 @@
 {
     "bookmarks": [
         {
-            "entryId": "tweet-1984443904180273251",
-            "sortIndex": "1847556010397762625",
-            "created_at": "Sat Nov 01 02:14:30 +0000 2025",
-            "created_by": "nsvemuri",
-            "tweet": "@DeviRudrani https://t.co/DopUqrPRWv video version",
+            "entryId": "tweet-2027067567018533185",
+            "sortIndex": "1858211998122702523",
+            "created_at": "Thu Feb 26 17:05:43 +0000 2026",
+            "created_by": "sciencegirl",
+            "tweet": "A stunning peacock spreading its colorful feathers\n\n https://t.co/yMbaTCJzSW",
             "hashtags": [],
-            "link": "https://youtu.be/YFtU3lj72QU",
-            "nlikes": 1,
-            "nreplies": 0,
-            "nretweets": 0
+            "link": "https://x.com/MrLaalpotato/status/2027044712071528876/video/1",
+            "nlikes": 199,
+            "nreplies": 21,
+            "nretweets": 44
         },
         {
-            "entryId": "tweet-1937108937243062391",
-            "sortIndex": "1838900975018432719",
-            "created_at": "Mon Jun 23 11:22:15 +0000 2025",
-            "created_by": "shiri_shh",
-            "tweet": "30+ Subreddits to share &amp; market your product on Reddit:\n\n1. r/SaaS\n2. r/startups\n3. r/Entrepreneur\n4. r/startup\n5. r/ProductMgt\n6. r/sweatystartup\n7. r/smallbusiness\n8. r/RoastMyStartup\n9. r/SideProject\n10. r/indiebiz\n11. r/startups_promotion\n12. r/thesidehustle\n13.",
+            "entryId": "tweet-2027074055942373684",
+            "sortIndex": "1858211957101746779",
+            "created_at": "Thu Feb 26 17:31:30 +0000 2026",
+            "created_by": "stats_feed",
+            "tweet": "\ud83d\udee2\ufe0f Largest Oil Producer\n\n1990s: \ud83c\uddf8\ud83c\udde6\ud83c\uddf8\ud83c\udde6\ud83c\uddf8\ud83c\udde6\ud83c\uddf8\ud83c\udde6\ud83c\uddf8\ud83c\udde6\ud83c\uddf8\ud83c\udde6\ud83c\uddf8\ud83c\udde6\ud83c\uddf8\ud83c\udde6\ud83c\uddf8\ud83c\udde6\ud83c\uddf8\ud83c\udde6\n2000s: \ud83c\uddf8\ud83c\udde6\ud83c\uddf8\ud83c\udde6\ud83c\uddf8\ud83c\udde6\ud83c\uddf8\ud83c\udde6\ud83c\uddf8\ud83c\udde6\ud83c\uddf8\ud83c\udde6\ud83c\uddf7\ud83c\uddfa\ud83c\uddf8\ud83c\udde6\ud83c\uddf7\ud83c\uddfa\ud83c\uddf7\ud83c\uddfa\n2010s: \ud83c\uddf8\ud83c\udde6\ud83c\uddf8\ud83c\udde6\ud83c\uddf8\ud83c\udde6\ud83c\uddf8\ud83c\udde6\ud83c\uddf8\ud83c\udde6\ud83c\uddf8\ud83c\udde6\ud83c\uddfa\ud83c\uddf8\ud83c\uddfa\ud83c\uddf8\ud83c\uddfa\ud83c\uddf8\ud83c\uddfa\ud83c\uddf8\n2020s: \ud83c\uddfa\ud83c\uddf8\ud83c\uddfa\ud83c\uddf8\ud83c\uddfa\ud83c\uddf8\ud83c\uddfa\ud83c\uddf8\ud83c\uddfa\ud83c\uddf8",
             "hashtags": [],
-            "link": "https://RentMyHeader.com",
-            "nlikes": 741,
-            "nreplies": 41,
-            "nretweets": 84
+            "link": "http://youtube.com/@stats_feed",
+            "nlikes": 486,
+            "nreplies": 25,
+            "nretweets": 26
         }
     ],
-    "user_profile": "The user is deeply interested in product marketing, growth strategies, and entrepreneurship, specifically for SaaS, startups, and indie businesses. They actively seek practical resources and channels for product promotion, as demonstrated by their bookmarking of a comprehensive list of subreddits for marketing. Their interests also include product management, side projects, and content creation (implied by the 'video version' bookmark). The user's tone is resourceful and action-oriented, focused on finding actionable advice, tools, and platforms to aid in business development and product success.",
+    "user_profile": "The user has diverse interests, appreciating both the aesthetic beauty of nature, specifically vibrant wildlife like peacocks, and factual analysis of global economic and geopolitical trends, particularly within the energy sector. They seem to enjoy content that is visually striking or presents data clearly and concisely, indicating an appreciation for both visual appeal and informative, data-driven insights.",
     "search_queries": [
-        "Reddit marketing for SaaS OR startups",
-        "startup growth marketing strategies",
-        "indie dev promotion tips OR side project marketing"
+        "wildlife photography beautiful",
+        "global oil production data",
+        "energy geopolitics analysis"
     ],
     "candidate_tweets": [
         {
-            "entryId": "tweet-2026700490856345919",
-            "tweet": "Claude Skills are a cheat code for DTC creative teams \ud83e\udd2f\n\nOne setup, reusable forever.\n\nClaude automatically follows your exact creative process \u2014 briefs, hooks, ad copy, research \u2014 without you explaining anything twice.\n\nPerfect for e-comm brands and agencies who are using https://t.co/FcsW2taGKL",
-            "created_at": "Wed Feb 25 16:47:05 +0000 2026",
-            "created_by": "mikefutia",
-            "link": "https://x.com/mikefutia/status/2026700490856345919/video/1",
-            "metrics": {
-                "likes": 365,
-                "retweets": 9,
-                "replies": 292
-            },
-            "score": 9,
-            "reasoning": "This tweet highlights an AI tool (Claude) for creative teams, specifically for ad copy and research, which is highly relevant to product marketing and growth strategies for e-commerce brands and agencies."
-        },
-        {
-            "entryId": "tweet-2026385957596111044",
-            "tweet": "An engineer at Anthropic wrote a spec, pointed Claude at an Asana board, and went home. Claude broke the spec into tickets, spawned agents for each one, and they started building independently.\n\nWhen the agent is confused it runs git-blame and messages the right engineers in https://t.co/RDXExyxNJS",
-            "created_at": "Tue Feb 24 19:57:15 +0000 2026",
-            "created_by": "rvivek",
-            "link": "https://x.com/rvivek/status/2026385957596111044/video/1",
-            "metrics": {
-                "likes": 7022,
-                "retweets": 514,
-                "replies": 273
-            },
-            "score": 8,
-            "reasoning": "This tweet describes an AI (Claude) autonomously managing engineering tasks, which is relevant to product development efficiency and streamlining processes for SaaS and startup builders."
-        },
-        {
-            "entryId": "tweet-2026925902291152982",
-            "tweet": "Elon Musk predicts that AI will bypass coding entirely by the end of 2026 - just creating the binary directly\n\nAI can create a much more efficient binary than can be done by any compiler\n\nSo just say, \"Create optimized binary for this particular outcome,\" and you actually bypass https://t.co/7sN8PvoUDQ",
-            "created_at": "Thu Feb 26 07:42:48 +0000 2026",
+            "entryId": "tweet-2027070725115543727",
+            "tweet": "Try Grokipedia - the only source of information that is most accurate on the internet and is constantly being updated in real-time by the smartest AI to achieve the Truth\n\nThe one thing that makes it so different is that the accuracy is achieved by people + Grok AI https://t.co/XjtAofR5Mf",
+            "created_at": "Thu Feb 26 17:18:16 +0000 2026",
             "created_by": "XFreeze",
-            "link": "https://x.com/XFreeze/status/2026925902291152982/video/1",
+            "link": "https://x.com/XFreeze/status/2027070725115543727/photo/1",
             "metrics": {
-                "likes": 675,
-                "retweets": 155,
-                "replies": 132
+                "likes": 45,
+                "retweets": 8,
+                "replies": 20
             },
             "score": 7,
-            "reasoning": "This tweet discusses the future of AI in bypassing coding, which is relevant to the technical aspects of building products and could impact how indie businesses are created."
+            "reasoning": "The tweet discusses an AI-powered information source focused on accuracy and real-time updates, which aligns with the user's interest in factual and data-driven insights and technical topics."
         },
         {
-            "entryId": "tweet-2026986655991689419",
-            "tweet": "Elon Musk: We might just be the biological bootloader for digital superintelligence.\n\n\u201cThey call it the singularity for a reason, because we don't know what's going to happen. In the not-too-distant future, the percentage of intelligence that is human will be quite small. At some https://t.co/xzM8xPt2nD",
-            "created_at": "Thu Feb 26 11:44:13 +0000 2026",
-            "created_by": "ElonClipsX",
-            "link": "https://x.com/ElonClipsX/status/2026986655991689419/video/1",
+            "entryId": "tweet-2026869592383988088",
+            "tweet": "Why tf does Google overview say Baby Keem is dead????? https://t.co/9eaj3kwhuS",
+            "created_at": "Thu Feb 26 03:59:02 +0000 2026",
+            "created_by": "tervisscoot",
+            "link": "https://x.com/tervisscoot/status/2026869592383988088/photo/1",
             "metrics": {
-                "likes": 138,
-                "retweets": 37,
-                "replies": 24
+                "likes": 14117,
+                "retweets": 136,
+                "replies": 375
             },
-            "score": 4,
-            "reasoning": "This tweet is a philosophical discussion about the future of AI and humanity, which is less directly actionable for product marketing or business growth strategies."
+            "score": 1,
+            "reasoning": "This tweet is a casual query about a celebrity's status on Google, which does not align with the user's stated interests in nature, economics, or data analysis."
         },
         {
-            "entryId": "tweet-2026910420863430850",
-            "tweet": "Sam Altman says this generation will be the first to come of age with superintelligence.\n\nHis one-year-old son will \u201cnever know a world where he was smarter than a computer.\u201d\n\nFor him, that\u2019s normal.\n\nFor us, it\u2019s the end of an era. https://t.co/0AdTzeGO6T",
-            "created_at": "Thu Feb 26 06:41:17 +0000 2026",
-            "created_by": "vitrupo",
-            "link": "https://x.com/vitrupo/status/2026910420863430850/video/1",
+            "entryId": "tweet-2027011704232509909",
+            "tweet": "Alonso in Melbourne https://t.co/JL0Au49Evi",
+            "created_at": "Thu Feb 26 13:23:45 +0000 2026",
+            "created_by": "f1trollofficial",
+            "link": "https://x.com/f1trollofficial/status/2027011704232509909/video/1",
             "metrics": {
-                "likes": 318,
-                "retweets": 35,
-                "replies": 54
+                "likes": 28431,
+                "retweets": 2034,
+                "replies": 156
             },
-            "score": 4,
-            "reasoning": "This tweet offers a philosophical perspective on superintelligence and societal shifts, rather than practical applications for business development or product success."
+            "score": 1,
+            "reasoning": "This tweet is a specific sports reference to Formula 1, which does not relate to the user's interests in nature, economics, or data."
         },
         {
-            "entryId": "tweet-2026818728357188056",
-            "tweet": "The most terrifying AI features aren\u2019t the ones we build.\n\nThey\u2019re the ones AI builds for itself.\n\nOpenClaw creator Peter Steinberger just shared the moment he realized something had fundamentally changed.\n\nHe sent his AI assistant a voice message.\n\nOne problem. He had never https://t.co/xR0tKrsLDc",
-            "created_at": "Thu Feb 26 00:36:55 +0000 2026",
-            "created_by": "r0ck3t23",
-            "link": "https://x.com/r0ck3t23/status/2026818728357188056/video/1",
+            "entryId": "tweet-2026935878720041386",
+            "tweet": "valid reason https://t.co/0ZyqclDyXV",
+            "created_at": "Thu Feb 26 08:22:26 +0000 2026",
+            "created_by": "catwithaura",
+            "link": "https://x.com/catwithaura/status/2026935878720041386/video/1",
             "metrics": {
-                "likes": 316,
-                "retweets": 79,
-                "replies": 44
+                "likes": 21617,
+                "retweets": 1287,
+                "replies": 14
             },
-            "score": 6,
-            "reasoning": "This tweet touches on autonomous AI development, which relates to the capabilities and future of AI in product creation, albeit in a more abstract sense than direct tools."
+            "score": 1,
+            "reasoning": "This tweet is too generic and lacks context to connect with the user's specific interests in nature, economics, or data."
         },
         {
-            "entryId": "tweet-2026695550771540489",
-            "tweet": "Introducing Perplexity Computer.\n\nComputer unifies every current AI capability into one system.\n\nIt can research, design, code, deploy, and manage any project end-to-end. https://t.co/dZUybl6VkY",
-            "created_at": "Wed Feb 25 16:27:28 +0000 2026",
-            "created_by": "perplexity_ai",
-            "link": "https://x.com/perplexity_ai/status/2026695550771540489/video/1",
+            "entryId": "tweet-2026881272606289955",
+            "tweet": "https://t.co/viAP45CZ77",
+            "created_at": "Thu Feb 26 04:45:27 +0000 2026",
+            "created_by": "7i__g",
+            "link": "https://x.com/7i__g/status/2026881272606289955/photo/1",
             "metrics": {
-                "likes": 34770,
-                "retweets": 3967,
-                "replies": 1303
+                "likes": 114495,
+                "retweets": 15531,
+                "replies": 131
             },
-            "score": 10,
-            "reasoning": "This tweet introduces an AI system that can research, design, code, deploy, and manage projects end-to-end, making it highly relevant as a practical tool for building SaaS, startups, and side projects."
+            "score": 1,
+            "reasoning": "This tweet consists only of a link without any descriptive text, making it impossible to determine its relevance to the user's interests."
         },
         {
-            "entryId": "tweet-2026921435386740908",
-            "tweet": "Claude FULL COURSE 1 HOUR (Build &amp; Automate Anything)\nhttps://t.co/QEX0TmODJH",
-            "created_at": "Thu Feb 26 07:25:03 +0000 2026",
-            "created_by": "HeyAmit_",
-            "link": "https://x.com/JulianGoldieSEO/status/2010180225108508760/video/1",
+            "entryId": "tweet-2026957590249279842",
+            "tweet": "Comunicado oficial:\n\nCristiano Ronaldo invierte en la UD Almer\u00eda como parte del consorcio propietario del club liderado por SMC Group https://t.co/0hGGWguEc0",
+            "created_at": "Thu Feb 26 09:48:43 +0000 2026",
+            "created_by": "U_D_Almeria",
+            "link": "https://x.com/U_D_Almeria/status/2026957590249279842/photo/1",
             "metrics": {
-                "likes": 558,
-                "retweets": 109,
-                "replies": 11
-            },
-            "score": 10,
-            "reasoning": "This tweet offers a full course on Claude for building and automating, which is a direct practical resource for someone interested in entrepreneurship and using tools for business development."
-        },
-        {
-            "entryId": "tweet-2027029171264733286",
-            "tweet": "That one mind-blowing question Elon Musk would ask the AGI\n\nLex: \"So when maybe you or somebody else creates an AGI system, and you get to ask her one question, what would that question be?\"\n\nElon: \"What's outside the simulation?\" https://t.co/0lQznanXuH",
-            "created_at": "Thu Feb 26 14:33:09 +0000 2026",
-            "created_by": "iam_smx",
-            "link": "https://x.com/iam_smx/status/2027029171264733286/video/1",
-            "metrics": {
-                "likes": 60,
-                "retweets": 7,
-                "replies": 34
+                "likes": 52536,
+                "retweets": 4988,
+                "replies": 1072
             },
             "score": 3,
-            "reasoning": "This tweet presents a philosophical question about AGI, which is not directly actionable or related to product marketing, growth, or practical business tools."
+            "reasoning": "While it mentions investment, this tweet focuses on sports club ownership rather than global economic or geopolitical trends, making it less relevant to the user's specific interests."
         },
         {
-            "entryId": "tweet-2026691233242816745",
-            "tweet": "- Claude = coding. ($20/mo)\n- Supabase = backend. (Free)\n- Vercel = deploying. (Free)\n- Namecheap = domain. ($12/yr)\n- Stripe = payments. (2.9%/transaction)\n- GitHub = version control. (Free)\n- Resend = emails. (Free)\n- Clerk = auth. (Free)\n- Cloudflare = DNS. (Free)\n- PostHog =",
-            "created_at": "Wed Feb 25 16:10:18 +0000 2026",
-            "created_by": "edgaralandough",
-            "link": null,
+            "entryId": "tweet-2027042236894994500",
+            "tweet": "Democrats accidentally created one of the best ads I've ever seen\n\nPlay this on repeat until the election\n\n https://t.co/2dV3n0URlK",
+            "created_at": "Thu Feb 26 15:25:04 +0000 2026",
+            "created_by": "EndWokeness",
+            "link": "https://x.com/PatAdams96/status/2027017444590604712/video/1",
             "metrics": {
-                "likes": 4615,
-                "retweets": 405,
-                "replies": 99
+                "likes": 30805,
+                "retweets": 5588,
+                "replies": 377
             },
-            "score": 10,
-            "reasoning": "This tweet lists a stack of essential tools for building and deploying projects, which is extremely relevant to someone building SaaS, startups, or indie businesses seeking actionable resources."
+            "score": 4,
+            "reasoning": "This tweet is political commentary about an advertisement, which is only tangentially related to the user's interest in geopolitical trends and not in a factual or analytical manner."
+        },
+        {
+            "entryId": "tweet-2027001970028875830",
+            "tweet": "https://t.co/nipOCovbI2",
+            "created_at": "Thu Feb 26 12:45:04 +0000 2026",
+            "created_by": "luscielia",
+            "link": "https://x.com/luscielia/status/2027001970028875830/photo/1",
+            "metrics": {
+                "likes": 15843,
+                "retweets": 1764,
+                "replies": 47
+            },
+            "score": 1,
+            "reasoning": "This tweet consists only of a link without any descriptive text, making it impossible to determine its relevance to the user's interests."
+        },
+        {
+            "entryId": "tweet-2026824914116985122",
+            "tweet": "\ufd3f\u0625\u0650\u0646\u064e\u0651 \u0627\u0644\u0644\u064e\u0651\u0647\u064e \u0648\u064e\u0645\u064e\u0644\u064e\u0627\u0626\u0650\u0643\u064e\u062a\u064e\u0647\u064f \u064a\u064f\u0635\u064e\u0644\u064f\u0651\u0648\u0646\u064e \u0639\u064e\u0644\u064e\u0649 \u0627\u0644\u0646\u064e\u0651\u0628\u0650\u064a\u0650\u0651 \u064a\u064e\u0627 \u0623\u064e\u064a\u064f\u0651\u0647\u064e\u0627 \u0627\u0644\u064e\u0651\u0630\u0650\u064a\u0646\u064e \u0622\u0645\u064e\u0646\u064f\u0648\u0627 \u0635\u064e\u0644\u064f\u0651\u0648\u0627 \u0639\u064e\u0644\u064e\u064a\u0652\u0647\u0650 \u0648\u064e\u0633\u064e\u0644\u0650\u0651\u0645\u064f\u0648\u0627 \u062a\u064e\u0633\u0652\u0644\u0650\u064a\u0645\u064b\u0627\ufd3e https://t.co/uuthU0g7ze",
+            "created_at": "Thu Feb 26 01:01:30 +0000 2026",
+            "created_by": "Mahfil_E_Durood",
+            "link": "https://x.com/Mahfil_E_Durood/status/2026824914116985122/video/1",
+            "metrics": {
+                "likes": 2396,
+                "retweets": 624,
+                "replies": 64
+            },
+            "score": 1,
+            "reasoning": "This tweet contains religious scripture, which does not align with the user's stated interests in nature, economics, or data analysis."
+        },
+        {
+            "entryId": "tweet-2027062481160392722",
+            "tweet": "https://t.co/qemtugXMcm",
+            "created_at": "Thu Feb 26 16:45:31 +0000 2026",
+            "created_by": "ohanxiety",
+            "link": "https://x.com/ohanxiety/status/2027062481160392722/photo/1",
+            "metrics": {
+                "likes": 150,
+                "retweets": 42,
+                "replies": 3
+            },
+            "score": 1,
+            "reasoning": "This tweet consists only of a link without any descriptive text, making it impossible to determine its relevance to the user's interests."
         }
     ],
     "recommendations": [
         {
-            "entryId": "tweet-2026695550771540489",
-            "tweet": "Introducing Perplexity Computer.\n\nComputer unifies every current AI capability into one system.\n\nIt can research, design, code, deploy, and manage any project end-to-end. https://t.co/dZUybl6VkY",
-            "created_at": "Wed Feb 25 16:27:28 +0000 2026",
-            "created_by": "perplexity_ai",
-            "link": "https://x.com/perplexity_ai/status/2026695550771540489/video/1",
-            "metrics": {
-                "likes": 34770,
-                "retweets": 3967,
-                "replies": 1303
-            },
-            "score": 10,
-            "reasoning": "This tweet introduces an AI system that can research, design, code, deploy, and manage projects end-to-end, making it highly relevant as a practical tool for building SaaS, startups, and side projects."
-        },
-        {
-            "entryId": "tweet-2026921435386740908",
-            "tweet": "Claude FULL COURSE 1 HOUR (Build &amp; Automate Anything)\nhttps://t.co/QEX0TmODJH",
-            "created_at": "Thu Feb 26 07:25:03 +0000 2026",
-            "created_by": "HeyAmit_",
-            "link": "https://x.com/JulianGoldieSEO/status/2010180225108508760/video/1",
-            "metrics": {
-                "likes": 558,
-                "retweets": 109,
-                "replies": 11
-            },
-            "score": 10,
-            "reasoning": "This tweet offers a full course on Claude for building and automating, which is a direct practical resource for someone interested in entrepreneurship and using tools for business development."
-        },
-        {
-            "entryId": "tweet-2026691233242816745",
-            "tweet": "- Claude = coding. ($20/mo)\n- Supabase = backend. (Free)\n- Vercel = deploying. (Free)\n- Namecheap = domain. ($12/yr)\n- Stripe = payments. (2.9%/transaction)\n- GitHub = version control. (Free)\n- Resend = emails. (Free)\n- Clerk = auth. (Free)\n- Cloudflare = DNS. (Free)\n- PostHog =",
-            "created_at": "Wed Feb 25 16:10:18 +0000 2026",
-            "created_by": "edgaralandough",
-            "link": null,
-            "metrics": {
-                "likes": 4615,
-                "retweets": 405,
-                "replies": 99
-            },
-            "score": 10,
-            "reasoning": "This tweet lists a stack of essential tools for building and deploying projects, which is extremely relevant to someone building SaaS, startups, or indie businesses seeking actionable resources."
-        },
-        {
-            "entryId": "tweet-2026700490856345919",
-            "tweet": "Claude Skills are a cheat code for DTC creative teams \ud83e\udd2f\n\nOne setup, reusable forever.\n\nClaude automatically follows your exact creative process \u2014 briefs, hooks, ad copy, research \u2014 without you explaining anything twice.\n\nPerfect for e-comm brands and agencies who are using https://t.co/FcsW2taGKL",
-            "created_at": "Wed Feb 25 16:47:05 +0000 2026",
-            "created_by": "mikefutia",
-            "link": "https://x.com/mikefutia/status/2026700490856345919/video/1",
-            "metrics": {
-                "likes": 365,
-                "retweets": 9,
-                "replies": 292
-            },
-            "score": 9,
-            "reasoning": "This tweet highlights an AI tool (Claude) for creative teams, specifically for ad copy and research, which is highly relevant to product marketing and growth strategies for e-commerce brands and agencies."
-        },
-        {
-            "entryId": "tweet-2026385957596111044",
-            "tweet": "An engineer at Anthropic wrote a spec, pointed Claude at an Asana board, and went home. Claude broke the spec into tickets, spawned agents for each one, and they started building independently.\n\nWhen the agent is confused it runs git-blame and messages the right engineers in https://t.co/RDXExyxNJS",
-            "created_at": "Tue Feb 24 19:57:15 +0000 2026",
-            "created_by": "rvivek",
-            "link": "https://x.com/rvivek/status/2026385957596111044/video/1",
-            "metrics": {
-                "likes": 7022,
-                "retweets": 514,
-                "replies": 273
-            },
-            "score": 8,
-            "reasoning": "This tweet describes an AI (Claude) autonomously managing engineering tasks, which is relevant to product development efficiency and streamlining processes for SaaS and startup builders."
-        },
-        {
-            "entryId": "tweet-2026925902291152982",
-            "tweet": "Elon Musk predicts that AI will bypass coding entirely by the end of 2026 - just creating the binary directly\n\nAI can create a much more efficient binary than can be done by any compiler\n\nSo just say, \"Create optimized binary for this particular outcome,\" and you actually bypass https://t.co/7sN8PvoUDQ",
-            "created_at": "Thu Feb 26 07:42:48 +0000 2026",
+            "entryId": "tweet-2027070725115543727",
+            "tweet": "Try Grokipedia - the only source of information that is most accurate on the internet and is constantly being updated in real-time by the smartest AI to achieve the Truth\n\nThe one thing that makes it so different is that the accuracy is achieved by people + Grok AI https://t.co/XjtAofR5Mf",
+            "created_at": "Thu Feb 26 17:18:16 +0000 2026",
             "created_by": "XFreeze",
-            "link": "https://x.com/XFreeze/status/2026925902291152982/video/1",
+            "link": "https://x.com/XFreeze/status/2027070725115543727/photo/1",
             "metrics": {
-                "likes": 675,
-                "retweets": 155,
-                "replies": 132
+                "likes": 45,
+                "retweets": 8,
+                "replies": 20
             },
             "score": 7,
-            "reasoning": "This tweet discusses the future of AI in bypassing coding, which is relevant to the technical aspects of building products and could impact how indie businesses are created."
+            "reasoning": "The tweet discusses an AI-powered information source focused on accuracy and real-time updates, which aligns with the user's interest in factual and data-driven insights and technical topics."
         },
         {
-            "entryId": "tweet-2026818728357188056",
-            "tweet": "The most terrifying AI features aren\u2019t the ones we build.\n\nThey\u2019re the ones AI builds for itself.\n\nOpenClaw creator Peter Steinberger just shared the moment he realized something had fundamentally changed.\n\nHe sent his AI assistant a voice message.\n\nOne problem. He had never https://t.co/xR0tKrsLDc",
-            "created_at": "Thu Feb 26 00:36:55 +0000 2026",
-            "created_by": "r0ck3t23",
-            "link": "https://x.com/r0ck3t23/status/2026818728357188056/video/1",
+            "entryId": "tweet-2027042236894994500",
+            "tweet": "Democrats accidentally created one of the best ads I've ever seen\n\nPlay this on repeat until the election\n\n https://t.co/2dV3n0URlK",
+            "created_at": "Thu Feb 26 15:25:04 +0000 2026",
+            "created_by": "EndWokeness",
+            "link": "https://x.com/PatAdams96/status/2027017444590604712/video/1",
             "metrics": {
-                "likes": 316,
-                "retweets": 79,
-                "replies": 44
-            },
-            "score": 6,
-            "reasoning": "This tweet touches on autonomous AI development, which relates to the capabilities and future of AI in product creation, albeit in a more abstract sense than direct tools."
-        },
-        {
-            "entryId": "tweet-2026986655991689419",
-            "tweet": "Elon Musk: We might just be the biological bootloader for digital superintelligence.\n\n\u201cThey call it the singularity for a reason, because we don't know what's going to happen. In the not-too-distant future, the percentage of intelligence that is human will be quite small. At some https://t.co/xzM8xPt2nD",
-            "created_at": "Thu Feb 26 11:44:13 +0000 2026",
-            "created_by": "ElonClipsX",
-            "link": "https://x.com/ElonClipsX/status/2026986655991689419/video/1",
-            "metrics": {
-                "likes": 138,
-                "retweets": 37,
-                "replies": 24
+                "likes": 30805,
+                "retweets": 5588,
+                "replies": 377
             },
             "score": 4,
-            "reasoning": "This tweet is a philosophical discussion about the future of AI and humanity, which is less directly actionable for product marketing or business growth strategies."
+            "reasoning": "This tweet is political commentary about an advertisement, which is only tangentially related to the user's interest in geopolitical trends and not in a factual or analytical manner."
         },
         {
-            "entryId": "tweet-2026910420863430850",
-            "tweet": "Sam Altman says this generation will be the first to come of age with superintelligence.\n\nHis one-year-old son will \u201cnever know a world where he was smarter than a computer.\u201d\n\nFor him, that\u2019s normal.\n\nFor us, it\u2019s the end of an era. https://t.co/0AdTzeGO6T",
-            "created_at": "Thu Feb 26 06:41:17 +0000 2026",
-            "created_by": "vitrupo",
-            "link": "https://x.com/vitrupo/status/2026910420863430850/video/1",
+            "entryId": "tweet-2026957590249279842",
+            "tweet": "Comunicado oficial:\n\nCristiano Ronaldo invierte en la UD Almer\u00eda como parte del consorcio propietario del club liderado por SMC Group https://t.co/0hGGWguEc0",
+            "created_at": "Thu Feb 26 09:48:43 +0000 2026",
+            "created_by": "U_D_Almeria",
+            "link": "https://x.com/U_D_Almeria/status/2026957590249279842/photo/1",
             "metrics": {
-                "likes": 318,
-                "retweets": 35,
-                "replies": 54
-            },
-            "score": 4,
-            "reasoning": "This tweet offers a philosophical perspective on superintelligence and societal shifts, rather than practical applications for business development or product success."
-        },
-        {
-            "entryId": "tweet-2027029171264733286",
-            "tweet": "That one mind-blowing question Elon Musk would ask the AGI\n\nLex: \"So when maybe you or somebody else creates an AGI system, and you get to ask her one question, what would that question be?\"\n\nElon: \"What's outside the simulation?\" https://t.co/0lQznanXuH",
-            "created_at": "Thu Feb 26 14:33:09 +0000 2026",
-            "created_by": "iam_smx",
-            "link": "https://x.com/iam_smx/status/2027029171264733286/video/1",
-            "metrics": {
-                "likes": 60,
-                "retweets": 7,
-                "replies": 34
+                "likes": 52536,
+                "retweets": 4988,
+                "replies": 1072
             },
             "score": 3,
-            "reasoning": "This tweet presents a philosophical question about AGI, which is not directly actionable or related to product marketing, growth, or practical business tools."
+            "reasoning": "While it mentions investment, this tweet focuses on sports club ownership rather than global economic or geopolitical trends, making it less relevant to the user's specific interests."
+        },
+        {
+            "entryId": "tweet-2026869592383988088",
+            "tweet": "Why tf does Google overview say Baby Keem is dead????? https://t.co/9eaj3kwhuS",
+            "created_at": "Thu Feb 26 03:59:02 +0000 2026",
+            "created_by": "tervisscoot",
+            "link": "https://x.com/tervisscoot/status/2026869592383988088/photo/1",
+            "metrics": {
+                "likes": 14117,
+                "retweets": 136,
+                "replies": 375
+            },
+            "score": 1,
+            "reasoning": "This tweet is a casual query about a celebrity's status on Google, which does not align with the user's stated interests in nature, economics, or data analysis."
+        },
+        {
+            "entryId": "tweet-2027011704232509909",
+            "tweet": "Alonso in Melbourne https://t.co/JL0Au49Evi",
+            "created_at": "Thu Feb 26 13:23:45 +0000 2026",
+            "created_by": "f1trollofficial",
+            "link": "https://x.com/f1trollofficial/status/2027011704232509909/video/1",
+            "metrics": {
+                "likes": 28431,
+                "retweets": 2034,
+                "replies": 156
+            },
+            "score": 1,
+            "reasoning": "This tweet is a specific sports reference to Formula 1, which does not relate to the user's interests in nature, economics, or data."
+        },
+        {
+            "entryId": "tweet-2026935878720041386",
+            "tweet": "valid reason https://t.co/0ZyqclDyXV",
+            "created_at": "Thu Feb 26 08:22:26 +0000 2026",
+            "created_by": "catwithaura",
+            "link": "https://x.com/catwithaura/status/2026935878720041386/video/1",
+            "metrics": {
+                "likes": 21617,
+                "retweets": 1287,
+                "replies": 14
+            },
+            "score": 1,
+            "reasoning": "This tweet is too generic and lacks context to connect with the user's specific interests in nature, economics, or data."
+        },
+        {
+            "entryId": "tweet-2026881272606289955",
+            "tweet": "https://t.co/viAP45CZ77",
+            "created_at": "Thu Feb 26 04:45:27 +0000 2026",
+            "created_by": "7i__g",
+            "link": "https://x.com/7i__g/status/2026881272606289955/photo/1",
+            "metrics": {
+                "likes": 114495,
+                "retweets": 15531,
+                "replies": 131
+            },
+            "score": 1,
+            "reasoning": "This tweet consists only of a link without any descriptive text, making it impossible to determine its relevance to the user's interests."
+        },
+        {
+            "entryId": "tweet-2027001970028875830",
+            "tweet": "https://t.co/nipOCovbI2",
+            "created_at": "Thu Feb 26 12:45:04 +0000 2026",
+            "created_by": "luscielia",
+            "link": "https://x.com/luscielia/status/2027001970028875830/photo/1",
+            "metrics": {
+                "likes": 15843,
+                "retweets": 1764,
+                "replies": 47
+            },
+            "score": 1,
+            "reasoning": "This tweet consists only of a link without any descriptive text, making it impossible to determine its relevance to the user's interests."
+        },
+        {
+            "entryId": "tweet-2026824914116985122",
+            "tweet": "\ufd3f\u0625\u0650\u0646\u064e\u0651 \u0627\u0644\u0644\u064e\u0651\u0647\u064e \u0648\u064e\u0645\u064e\u0644\u064e\u0627\u0626\u0650\u0643\u064e\u062a\u064e\u0647\u064f \u064a\u064f\u0635\u064e\u0644\u064f\u0651\u0648\u0646\u064e \u0639\u064e\u0644\u064e\u0649 \u0627\u0644\u0646\u064e\u0651\u0628\u0650\u064a\u0650\u0651 \u064a\u064e\u0627 \u0623\u064e\u064a\u064f\u0651\u0647\u064e\u0627 \u0627\u0644\u064e\u0651\u0630\u0650\u064a\u0646\u064e \u0622\u0645\u064e\u0646\u064f\u0648\u0627 \u0635\u064e\u0644\u064f\u0651\u0648\u0627 \u0639\u064e\u0644\u064e\u064a\u0652\u0647\u0650 \u0648\u064e\u0633\u064e\u0644\u0650\u0651\u0645\u064f\u0648\u0627 \u062a\u064e\u0633\u0652\u0644\u0650\u064a\u0645\u064b\u0627\ufd3e https://t.co/uuthU0g7ze",
+            "created_at": "Thu Feb 26 01:01:30 +0000 2026",
+            "created_by": "Mahfil_E_Durood",
+            "link": "https://x.com/Mahfil_E_Durood/status/2026824914116985122/video/1",
+            "metrics": {
+                "likes": 2396,
+                "retweets": 624,
+                "replies": 64
+            },
+            "score": 1,
+            "reasoning": "This tweet contains religious scripture, which does not align with the user's stated interests in nature, economics, or data analysis."
+        },
+        {
+            "entryId": "tweet-2027062481160392722",
+            "tweet": "https://t.co/qemtugXMcm",
+            "created_at": "Thu Feb 26 16:45:31 +0000 2026",
+            "created_by": "ohanxiety",
+            "link": "https://x.com/ohanxiety/status/2027062481160392722/photo/1",
+            "metrics": {
+                "likes": 150,
+                "retweets": 42,
+                "replies": 3
+            },
+            "score": 1,
+            "reasoning": "This tweet consists only of a link without any descriptive text, making it impossible to determine its relevance to the user's interests."
         }
     ]
 }

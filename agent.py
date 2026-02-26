@@ -46,10 +46,11 @@ llm = ChatGoogleGenerativeAI(
 
 def fetch_bookmarks_node(state: AgentState) -> Dict[str, Any]:
     print("--- Fetching Bookmarks (from JSON export) ---")
+    config = state.get("config", {})
     
     # We load bookmarks from a local JSON file to bypass Twitter API restrictions
     try:
-        bookmarks_data = get_twitter_bookmarks()
+        bookmarks_data = get_twitter_bookmarks(config)
             
         print(f"Loaded {len(bookmarks_data)} bookmarks from Twitter")
         return {"bookmarks": bookmarks_data}
@@ -84,11 +85,12 @@ def build_profile_node(state: AgentState) -> Dict[str, Any]:
 def fetch_candidates_node(state: AgentState) -> Dict[str, Any]:
     print("--- Fetching Candidate Tweets (from Twitter) ---")
     queries = state.get("search_queries", [])
+    config = state.get("config", {})
     
     candidates = []
         
     try:
-        all_tweets = make_home_timeline_request()
+        all_tweets = make_home_timeline_request(config)
         
         if not all_tweets:
             all_tweets = []
@@ -119,7 +121,7 @@ def fetch_candidates_node(state: AgentState) -> Dict[str, Any]:
                 sampled_tweets = random.sample(matched_for_query, sample_size)
                 
                 for t in sampled_tweets:
-                    if not any(c['entryId'] == t.get('entryId') for c in candidates):
+                    if not any(c.get('entryId') == t.get('entryId') for c in candidates):
                         candidates.append({
                             "entryId": t.get("entryId", ""),
                             "tweet": t.get("tweet", ""),
@@ -133,7 +135,7 @@ def fetch_candidates_node(state: AgentState) -> Dict[str, Any]:
 
         # Ensure we have a minimum of 10 tweets
         if len(candidates) < 10 and all_tweets:
-            print("  Padding candidates to reach minimum of 10")
+            print(f"  Padding candidates to reach minimum of 10. Found {len(all_tweets)} total tweets.")
             remaining_tweets = [t for t in all_tweets if not any(c.get('entryId') == t.get('entryId') for c in candidates)]
             valid_remaining = [t for t in remaining_tweets if t.get("tweet") and len(t.get("tweet")) > 20]
             
@@ -249,13 +251,14 @@ def build_graph():
     app = workflow.compile()
     return app
 
-if __name__ == "__main__":
+def run_agent(config: Dict[str, Any] = None):
     app = build_graph()
-    print("Graph compiled successfully. Tracing should be active if LangSmith is configured.")
+    if config is None:
+        config = {}
     
     print("\nStarting Agent Execution...")
-    # Run the compiled graph
     final_state = app.invoke({
+        "config": config,
         "bookmarks": [], 
         "user_profile": "", 
         "search_queries": [], 
@@ -263,5 +266,14 @@ if __name__ == "__main__":
         "recommendations": []
     })
     print("\nAgent finished execution!")
+    
+    # Save the output to JSON so it can be served or inspected
     with open('data/data.json', 'w') as file:
-        json.dump(final_state, file, indent=4)
+        # Avoid saving the config dict to the public JSON for security
+        state_to_save = {k: v for k, v in final_state.items() if k != 'config'}
+        json.dump(state_to_save, file, indent=4)
+        
+    return final_state
+
+if __name__ == "__main__":
+    run_agent()
