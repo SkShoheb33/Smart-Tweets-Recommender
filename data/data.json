@@ -1,0 +1,318 @@
+{
+    "bookmarks": [
+        {
+            "entryId": "tweet-1984443904180273251",
+            "sortIndex": "1847556010397762625",
+            "created_at": "Sat Nov 01 02:14:30 +0000 2025",
+            "created_by": "nsvemuri",
+            "tweet": "@DeviRudrani https://t.co/DopUqrPRWv video version",
+            "hashtags": [],
+            "link": "https://youtu.be/YFtU3lj72QU",
+            "nlikes": 1,
+            "nreplies": 0,
+            "nretweets": 0
+        },
+        {
+            "entryId": "tweet-1937108937243062391",
+            "sortIndex": "1838900975018432719",
+            "created_at": "Mon Jun 23 11:22:15 +0000 2025",
+            "created_by": "shiri_shh",
+            "tweet": "30+ Subreddits to share &amp; market your product on Reddit:\n\n1. r/SaaS\n2. r/startups\n3. r/Entrepreneur\n4. r/startup\n5. r/ProductMgt\n6. r/sweatystartup\n7. r/smallbusiness\n8. r/RoastMyStartup\n9. r/SideProject\n10. r/indiebiz\n11. r/startups_promotion\n12. r/thesidehustle\n13.",
+            "hashtags": [],
+            "link": "https://RentMyHeader.com",
+            "nlikes": 741,
+            "nreplies": 41,
+            "nretweets": 84
+        }
+    ],
+    "user_profile": "The user is deeply interested in product marketing, growth strategies, and entrepreneurship, specifically for SaaS, startups, and indie businesses. They actively seek practical resources and channels for product promotion, as demonstrated by their bookmarking of a comprehensive list of subreddits for marketing. Their interests also include product management, side projects, and content creation (implied by the 'video version' bookmark). The user's tone is resourceful and action-oriented, focused on finding actionable advice, tools, and platforms to aid in business development and product success.",
+    "search_queries": [
+        "Reddit marketing for SaaS OR startups",
+        "startup growth marketing strategies",
+        "indie dev promotion tips OR side project marketing"
+    ],
+    "candidate_tweets": [
+        {
+            "entryId": "tweet-2026700490856345919",
+            "tweet": "Claude Skills are a cheat code for DTC creative teams \ud83e\udd2f\n\nOne setup, reusable forever.\n\nClaude automatically follows your exact creative process \u2014 briefs, hooks, ad copy, research \u2014 without you explaining anything twice.\n\nPerfect for e-comm brands and agencies who are using https://t.co/FcsW2taGKL",
+            "created_at": "Wed Feb 25 16:47:05 +0000 2026",
+            "created_by": "mikefutia",
+            "link": "https://x.com/mikefutia/status/2026700490856345919/video/1",
+            "metrics": {
+                "likes": 365,
+                "retweets": 9,
+                "replies": 292
+            },
+            "score": 9,
+            "reasoning": "This tweet highlights an AI tool (Claude) for creative teams, specifically for ad copy and research, which is highly relevant to product marketing and growth strategies for e-commerce brands and agencies."
+        },
+        {
+            "entryId": "tweet-2026385957596111044",
+            "tweet": "An engineer at Anthropic wrote a spec, pointed Claude at an Asana board, and went home. Claude broke the spec into tickets, spawned agents for each one, and they started building independently.\n\nWhen the agent is confused it runs git-blame and messages the right engineers in https://t.co/RDXExyxNJS",
+            "created_at": "Tue Feb 24 19:57:15 +0000 2026",
+            "created_by": "rvivek",
+            "link": "https://x.com/rvivek/status/2026385957596111044/video/1",
+            "metrics": {
+                "likes": 7022,
+                "retweets": 514,
+                "replies": 273
+            },
+            "score": 8,
+            "reasoning": "This tweet describes an AI (Claude) autonomously managing engineering tasks, which is relevant to product development efficiency and streamlining processes for SaaS and startup builders."
+        },
+        {
+            "entryId": "tweet-2026925902291152982",
+            "tweet": "Elon Musk predicts that AI will bypass coding entirely by the end of 2026 - just creating the binary directly\n\nAI can create a much more efficient binary than can be done by any compiler\n\nSo just say, \"Create optimized binary for this particular outcome,\" and you actually bypass https://t.co/7sN8PvoUDQ",
+            "created_at": "Thu Feb 26 07:42:48 +0000 2026",
+            "created_by": "XFreeze",
+            "link": "https://x.com/XFreeze/status/2026925902291152982/video/1",
+            "metrics": {
+                "likes": 675,
+                "retweets": 155,
+                "replies": 132
+            },
+            "score": 7,
+            "reasoning": "This tweet discusses the future of AI in bypassing coding, which is relevant to the technical aspects of building products and could impact how indie businesses are created."
+        },
+        {
+            "entryId": "tweet-2026986655991689419",
+            "tweet": "Elon Musk: We might just be the biological bootloader for digital superintelligence.\n\n\u201cThey call it the singularity for a reason, because we don't know what's going to happen. In the not-too-distant future, the percentage of intelligence that is human will be quite small. At some https://t.co/xzM8xPt2nD",
+            "created_at": "Thu Feb 26 11:44:13 +0000 2026",
+            "created_by": "ElonClipsX",
+            "link": "https://x.com/ElonClipsX/status/2026986655991689419/video/1",
+            "metrics": {
+                "likes": 138,
+                "retweets": 37,
+                "replies": 24
+            },
+            "score": 4,
+            "reasoning": "This tweet is a philosophical discussion about the future of AI and humanity, which is less directly actionable for product marketing or business growth strategies."
+        },
+        {
+            "entryId": "tweet-2026910420863430850",
+            "tweet": "Sam Altman says this generation will be the first to come of age with superintelligence.\n\nHis one-year-old son will \u201cnever know a world where he was smarter than a computer.\u201d\n\nFor him, that\u2019s normal.\n\nFor us, it\u2019s the end of an era. https://t.co/0AdTzeGO6T",
+            "created_at": "Thu Feb 26 06:41:17 +0000 2026",
+            "created_by": "vitrupo",
+            "link": "https://x.com/vitrupo/status/2026910420863430850/video/1",
+            "metrics": {
+                "likes": 318,
+                "retweets": 35,
+                "replies": 54
+            },
+            "score": 4,
+            "reasoning": "This tweet offers a philosophical perspective on superintelligence and societal shifts, rather than practical applications for business development or product success."
+        },
+        {
+            "entryId": "tweet-2026818728357188056",
+            "tweet": "The most terrifying AI features aren\u2019t the ones we build.\n\nThey\u2019re the ones AI builds for itself.\n\nOpenClaw creator Peter Steinberger just shared the moment he realized something had fundamentally changed.\n\nHe sent his AI assistant a voice message.\n\nOne problem. He had never https://t.co/xR0tKrsLDc",
+            "created_at": "Thu Feb 26 00:36:55 +0000 2026",
+            "created_by": "r0ck3t23",
+            "link": "https://x.com/r0ck3t23/status/2026818728357188056/video/1",
+            "metrics": {
+                "likes": 316,
+                "retweets": 79,
+                "replies": 44
+            },
+            "score": 6,
+            "reasoning": "This tweet touches on autonomous AI development, which relates to the capabilities and future of AI in product creation, albeit in a more abstract sense than direct tools."
+        },
+        {
+            "entryId": "tweet-2026695550771540489",
+            "tweet": "Introducing Perplexity Computer.\n\nComputer unifies every current AI capability into one system.\n\nIt can research, design, code, deploy, and manage any project end-to-end. https://t.co/dZUybl6VkY",
+            "created_at": "Wed Feb 25 16:27:28 +0000 2026",
+            "created_by": "perplexity_ai",
+            "link": "https://x.com/perplexity_ai/status/2026695550771540489/video/1",
+            "metrics": {
+                "likes": 34770,
+                "retweets": 3967,
+                "replies": 1303
+            },
+            "score": 10,
+            "reasoning": "This tweet introduces an AI system that can research, design, code, deploy, and manage projects end-to-end, making it highly relevant as a practical tool for building SaaS, startups, and side projects."
+        },
+        {
+            "entryId": "tweet-2026921435386740908",
+            "tweet": "Claude FULL COURSE 1 HOUR (Build &amp; Automate Anything)\nhttps://t.co/QEX0TmODJH",
+            "created_at": "Thu Feb 26 07:25:03 +0000 2026",
+            "created_by": "HeyAmit_",
+            "link": "https://x.com/JulianGoldieSEO/status/2010180225108508760/video/1",
+            "metrics": {
+                "likes": 558,
+                "retweets": 109,
+                "replies": 11
+            },
+            "score": 10,
+            "reasoning": "This tweet offers a full course on Claude for building and automating, which is a direct practical resource for someone interested in entrepreneurship and using tools for business development."
+        },
+        {
+            "entryId": "tweet-2027029171264733286",
+            "tweet": "That one mind-blowing question Elon Musk would ask the AGI\n\nLex: \"So when maybe you or somebody else creates an AGI system, and you get to ask her one question, what would that question be?\"\n\nElon: \"What's outside the simulation?\" https://t.co/0lQznanXuH",
+            "created_at": "Thu Feb 26 14:33:09 +0000 2026",
+            "created_by": "iam_smx",
+            "link": "https://x.com/iam_smx/status/2027029171264733286/video/1",
+            "metrics": {
+                "likes": 60,
+                "retweets": 7,
+                "replies": 34
+            },
+            "score": 3,
+            "reasoning": "This tweet presents a philosophical question about AGI, which is not directly actionable or related to product marketing, growth, or practical business tools."
+        },
+        {
+            "entryId": "tweet-2026691233242816745",
+            "tweet": "- Claude = coding. ($20/mo)\n- Supabase = backend. (Free)\n- Vercel = deploying. (Free)\n- Namecheap = domain. ($12/yr)\n- Stripe = payments. (2.9%/transaction)\n- GitHub = version control. (Free)\n- Resend = emails. (Free)\n- Clerk = auth. (Free)\n- Cloudflare = DNS. (Free)\n- PostHog =",
+            "created_at": "Wed Feb 25 16:10:18 +0000 2026",
+            "created_by": "edgaralandough",
+            "link": null,
+            "metrics": {
+                "likes": 4615,
+                "retweets": 405,
+                "replies": 99
+            },
+            "score": 10,
+            "reasoning": "This tweet lists a stack of essential tools for building and deploying projects, which is extremely relevant to someone building SaaS, startups, or indie businesses seeking actionable resources."
+        }
+    ],
+    "recommendations": [
+        {
+            "entryId": "tweet-2026695550771540489",
+            "tweet": "Introducing Perplexity Computer.\n\nComputer unifies every current AI capability into one system.\n\nIt can research, design, code, deploy, and manage any project end-to-end. https://t.co/dZUybl6VkY",
+            "created_at": "Wed Feb 25 16:27:28 +0000 2026",
+            "created_by": "perplexity_ai",
+            "link": "https://x.com/perplexity_ai/status/2026695550771540489/video/1",
+            "metrics": {
+                "likes": 34770,
+                "retweets": 3967,
+                "replies": 1303
+            },
+            "score": 10,
+            "reasoning": "This tweet introduces an AI system that can research, design, code, deploy, and manage projects end-to-end, making it highly relevant as a practical tool for building SaaS, startups, and side projects."
+        },
+        {
+            "entryId": "tweet-2026921435386740908",
+            "tweet": "Claude FULL COURSE 1 HOUR (Build &amp; Automate Anything)\nhttps://t.co/QEX0TmODJH",
+            "created_at": "Thu Feb 26 07:25:03 +0000 2026",
+            "created_by": "HeyAmit_",
+            "link": "https://x.com/JulianGoldieSEO/status/2010180225108508760/video/1",
+            "metrics": {
+                "likes": 558,
+                "retweets": 109,
+                "replies": 11
+            },
+            "score": 10,
+            "reasoning": "This tweet offers a full course on Claude for building and automating, which is a direct practical resource for someone interested in entrepreneurship and using tools for business development."
+        },
+        {
+            "entryId": "tweet-2026691233242816745",
+            "tweet": "- Claude = coding. ($20/mo)\n- Supabase = backend. (Free)\n- Vercel = deploying. (Free)\n- Namecheap = domain. ($12/yr)\n- Stripe = payments. (2.9%/transaction)\n- GitHub = version control. (Free)\n- Resend = emails. (Free)\n- Clerk = auth. (Free)\n- Cloudflare = DNS. (Free)\n- PostHog =",
+            "created_at": "Wed Feb 25 16:10:18 +0000 2026",
+            "created_by": "edgaralandough",
+            "link": null,
+            "metrics": {
+                "likes": 4615,
+                "retweets": 405,
+                "replies": 99
+            },
+            "score": 10,
+            "reasoning": "This tweet lists a stack of essential tools for building and deploying projects, which is extremely relevant to someone building SaaS, startups, or indie businesses seeking actionable resources."
+        },
+        {
+            "entryId": "tweet-2026700490856345919",
+            "tweet": "Claude Skills are a cheat code for DTC creative teams \ud83e\udd2f\n\nOne setup, reusable forever.\n\nClaude automatically follows your exact creative process \u2014 briefs, hooks, ad copy, research \u2014 without you explaining anything twice.\n\nPerfect for e-comm brands and agencies who are using https://t.co/FcsW2taGKL",
+            "created_at": "Wed Feb 25 16:47:05 +0000 2026",
+            "created_by": "mikefutia",
+            "link": "https://x.com/mikefutia/status/2026700490856345919/video/1",
+            "metrics": {
+                "likes": 365,
+                "retweets": 9,
+                "replies": 292
+            },
+            "score": 9,
+            "reasoning": "This tweet highlights an AI tool (Claude) for creative teams, specifically for ad copy and research, which is highly relevant to product marketing and growth strategies for e-commerce brands and agencies."
+        },
+        {
+            "entryId": "tweet-2026385957596111044",
+            "tweet": "An engineer at Anthropic wrote a spec, pointed Claude at an Asana board, and went home. Claude broke the spec into tickets, spawned agents for each one, and they started building independently.\n\nWhen the agent is confused it runs git-blame and messages the right engineers in https://t.co/RDXExyxNJS",
+            "created_at": "Tue Feb 24 19:57:15 +0000 2026",
+            "created_by": "rvivek",
+            "link": "https://x.com/rvivek/status/2026385957596111044/video/1",
+            "metrics": {
+                "likes": 7022,
+                "retweets": 514,
+                "replies": 273
+            },
+            "score": 8,
+            "reasoning": "This tweet describes an AI (Claude) autonomously managing engineering tasks, which is relevant to product development efficiency and streamlining processes for SaaS and startup builders."
+        },
+        {
+            "entryId": "tweet-2026925902291152982",
+            "tweet": "Elon Musk predicts that AI will bypass coding entirely by the end of 2026 - just creating the binary directly\n\nAI can create a much more efficient binary than can be done by any compiler\n\nSo just say, \"Create optimized binary for this particular outcome,\" and you actually bypass https://t.co/7sN8PvoUDQ",
+            "created_at": "Thu Feb 26 07:42:48 +0000 2026",
+            "created_by": "XFreeze",
+            "link": "https://x.com/XFreeze/status/2026925902291152982/video/1",
+            "metrics": {
+                "likes": 675,
+                "retweets": 155,
+                "replies": 132
+            },
+            "score": 7,
+            "reasoning": "This tweet discusses the future of AI in bypassing coding, which is relevant to the technical aspects of building products and could impact how indie businesses are created."
+        },
+        {
+            "entryId": "tweet-2026818728357188056",
+            "tweet": "The most terrifying AI features aren\u2019t the ones we build.\n\nThey\u2019re the ones AI builds for itself.\n\nOpenClaw creator Peter Steinberger just shared the moment he realized something had fundamentally changed.\n\nHe sent his AI assistant a voice message.\n\nOne problem. He had never https://t.co/xR0tKrsLDc",
+            "created_at": "Thu Feb 26 00:36:55 +0000 2026",
+            "created_by": "r0ck3t23",
+            "link": "https://x.com/r0ck3t23/status/2026818728357188056/video/1",
+            "metrics": {
+                "likes": 316,
+                "retweets": 79,
+                "replies": 44
+            },
+            "score": 6,
+            "reasoning": "This tweet touches on autonomous AI development, which relates to the capabilities and future of AI in product creation, albeit in a more abstract sense than direct tools."
+        },
+        {
+            "entryId": "tweet-2026986655991689419",
+            "tweet": "Elon Musk: We might just be the biological bootloader for digital superintelligence.\n\n\u201cThey call it the singularity for a reason, because we don't know what's going to happen. In the not-too-distant future, the percentage of intelligence that is human will be quite small. At some https://t.co/xzM8xPt2nD",
+            "created_at": "Thu Feb 26 11:44:13 +0000 2026",
+            "created_by": "ElonClipsX",
+            "link": "https://x.com/ElonClipsX/status/2026986655991689419/video/1",
+            "metrics": {
+                "likes": 138,
+                "retweets": 37,
+                "replies": 24
+            },
+            "score": 4,
+            "reasoning": "This tweet is a philosophical discussion about the future of AI and humanity, which is less directly actionable for product marketing or business growth strategies."
+        },
+        {
+            "entryId": "tweet-2026910420863430850",
+            "tweet": "Sam Altman says this generation will be the first to come of age with superintelligence.\n\nHis one-year-old son will \u201cnever know a world where he was smarter than a computer.\u201d\n\nFor him, that\u2019s normal.\n\nFor us, it\u2019s the end of an era. https://t.co/0AdTzeGO6T",
+            "created_at": "Thu Feb 26 06:41:17 +0000 2026",
+            "created_by": "vitrupo",
+            "link": "https://x.com/vitrupo/status/2026910420863430850/video/1",
+            "metrics": {
+                "likes": 318,
+                "retweets": 35,
+                "replies": 54
+            },
+            "score": 4,
+            "reasoning": "This tweet offers a philosophical perspective on superintelligence and societal shifts, rather than practical applications for business development or product success."
+        },
+        {
+            "entryId": "tweet-2027029171264733286",
+            "tweet": "That one mind-blowing question Elon Musk would ask the AGI\n\nLex: \"So when maybe you or somebody else creates an AGI system, and you get to ask her one question, what would that question be?\"\n\nElon: \"What's outside the simulation?\" https://t.co/0lQznanXuH",
+            "created_at": "Thu Feb 26 14:33:09 +0000 2026",
+            "created_by": "iam_smx",
+            "link": "https://x.com/iam_smx/status/2027029171264733286/video/1",
+            "metrics": {
+                "likes": 60,
+                "retweets": 7,
+                "replies": 34
+            },
+            "score": 3,
+            "reasoning": "This tweet presents a philosophical question about AGI, which is not directly actionable or related to product marketing, growth, or practical business tools."
+        }
+    ]
+}

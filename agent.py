@@ -14,6 +14,9 @@ from langchain_core.prompts import PromptTemplate
 from langgraph.graph import StateGraph, START, END
 
 from state import AgentState
+from helper.getParsedTweets import get_parsed_tweets
+from api.getBookMarks import get_twitter_bookmarks
+from api.getTweets import make_home_timeline_request
 
 load_dotenv()
 
@@ -45,20 +48,13 @@ def fetch_bookmarks_node(state: AgentState) -> Dict[str, Any]:
     print("--- Fetching Bookmarks (from JSON export) ---")
     
     # We load bookmarks from a local JSON file to bypass Twitter API restrictions
-    bookmarks_file = "bookmarks.json"
-    
-    if not os.path.exists(bookmarks_file):
-        print(f"File {bookmarks_file} not found. Please create it with your exported Twitter bookmarks.")
-        return {"bookmarks": []}
-        
     try:
-        with open(bookmarks_file, 'r', encoding='utf-8') as f:
-            bookmarks_data = json.load(f)
+        bookmarks_data = get_twitter_bookmarks()
             
-        print(f"Loaded {len(bookmarks_data)} bookmarks from {bookmarks_file}")
+        print(f"Loaded {len(bookmarks_data)} bookmarks from Twitter")
         return {"bookmarks": bookmarks_data}
     except Exception as e:
-        print(f"Error loading bookmarks from {bookmarks_file}: {e}")
+        print(f"Error loading bookmarks from Twitter: {e}")
         return {"bookmarks": []}
 
 def build_profile_node(state: AgentState) -> Dict[str, Any]:
@@ -67,7 +63,7 @@ def build_profile_node(state: AgentState) -> Dict[str, Any]:
     if not bookmarks:
         return {"user_profile": "No bookmarks found.", "search_queries": ["LangChain LangGraph", "AI Agents Gemini", "Twitter API Python"]}
 
-    bookmarks_text = "\n".join([f"- {b['text']}" for b in bookmarks])
+    bookmarks_text = "\n".join([f"- {b['tweet']}" for b in bookmarks])
     
     prompt = PromptTemplate.from_template(
         "Analyze these bookmarked tweets:\n\n{bookmarks}\n\n"
@@ -86,21 +82,18 @@ def build_profile_node(state: AgentState) -> Dict[str, Any]:
     }
 
 def fetch_candidates_node(state: AgentState) -> Dict[str, Any]:
-    print("--- Fetching Candidate Tweets (from local JSON) ---")
+    print("--- Fetching Candidate Tweets (from Twitter) ---")
     queries = state.get("search_queries", [])
     
     candidates = []
-    tweets_file = "tweets.json"
-    
-    if not os.path.exists(tweets_file):
-        print(f"File {tweets_file} not found.")
-        return {"candidate_tweets": []}
         
     try:
-        with open(tweets_file, 'r', encoding='utf-8') as f:
-            all_tweets = json.load(f)
+        all_tweets = make_home_timeline_request()
+        
+        if not all_tweets:
+            all_tweets = []
             
-        print(f"Loaded {len(all_tweets)} potential tweets from {tweets_file}")
+        print(f"Loaded {len(all_tweets)} potential tweets from Twitter")
         
         # Simple heuristic search: Check if any query word exists in the tweet
         for query in queries:
@@ -110,31 +103,56 @@ def fetch_candidates_node(state: AgentState) -> Dict[str, Any]:
             matched_for_query = []
             for t in all_tweets:
                 # Basic string match
-                text = t.get("tweet", "").lower()
+                text = t.get("tweet")
+                if text is None:
+                    text = ""
+                text = text.lower()
                 # Check for whole word matches
                 if any(re.search(rf'\b{re.escape(word)}\b', text) for word in query_words) and len(text) > 20:
                     matched_for_query.append(t)
             
             # Randomly select a few matches for this query to avoid overwhelming the LLM
+            sampled_tweets = []
             if matched_for_query:
                 # Let's take up to 10 random matches per query
                 sample_size = min(10, len(matched_for_query))
                 sampled_tweets = random.sample(matched_for_query, sample_size)
                 
                 for t in sampled_tweets:
-                    if not any(c['id'] == t['id'] for c in candidates):
+                    if not any(c['entryId'] == t.get('entryId') for c in candidates):
                         candidates.append({
-                            "id": t["id"],
-                            "text": t["tweet"],
-                            "created_at": t.get("date", ""),
-                            "url": t.get("link", ""),
-                            "metrics": {"likes": t.get("nlikes", "0"), "retweets": t.get("nretweets", "0")}
+                            "entryId": t.get("entryId", ""),
+                            "tweet": t.get("tweet", ""),
+                            "created_at": t.get("created_at", ""),
+                            "created_by": t.get("created_by", ""),
+                            "link": t.get("link", ""),
+                            "metrics": {"likes": t.get("nlikes", "0"), "retweets": t.get("nretweets", "0"), "replies": t.get("nreplies", "0")}
                         })
                         
             print(f"  Added {len(sampled_tweets)} candidates for query '{query}'")
+
+        # Ensure we have a minimum of 10 tweets
+        if len(candidates) < 10 and all_tweets:
+            print("  Padding candidates to reach minimum of 10")
+            remaining_tweets = [t for t in all_tweets if not any(c.get('entryId') == t.get('entryId') for c in candidates)]
+            valid_remaining = [t for t in remaining_tweets if t.get("tweet") and len(t.get("tweet")) > 20]
+            
+            needed = 10 - len(candidates)
+            padding_tweets = random.sample(valid_remaining, min(needed, len(valid_remaining)))
+            
+            for t in padding_tweets:
+                candidates.append({
+                    "entryId": t.get("entryId", ""),
+                    "tweet": t.get("tweet", ""),
+                    "created_at": t.get("created_at", ""),
+                    "created_by": t.get("created_by", ""),
+                    "link": t.get("link", ""),
+                    "metrics": {"likes": t.get("nlikes", "0"), "retweets": t.get("nretweets", "0"), "replies": t.get("nreplies", "0")}
+                })
+            print(f"  Added {len(padding_tweets)} padding candidates")
                         
     except Exception as e:
-        print(f"Error loading candidates from {tweets_file}: {e}")
+        print(f"Error loading candidates from Twitter: {e}")
             
     return {"candidate_tweets": candidates}
 
@@ -149,7 +167,7 @@ def score_tweets_node(state: AgentState) -> Dict[str, Any]:
     # Prepare prompt
     candidates_text = ""
     for c in candidates:
-         candidates_text += f"ID: {c['id']}\nText: {c['text']}\n\n"
+         candidates_text += f"ID: {c['entryId']}\nText: {c['tweet']}\n\n"
          
     prompt = PromptTemplate.from_template(
         "User Profile:\n{profile}\n\n"
@@ -168,11 +186,11 @@ def score_tweets_node(state: AgentState) -> Dict[str, Any]:
         # Filter and build final recommendations
         recommendations = []
         # Create a lookup for original candidate details
-        candidate_lookup = {c["id"]: c for c in candidates}
+        candidate_lookup = {c["entryId"]: c for c in candidates}
         
         for scored in result.scored_tweets:
-            # Lowered threshold to 4 to make sure we get *some* recommendations from the random sample
-            if scored.score >= 4 and scored.tweet_id in candidate_lookup:
+            # Remove strict threshold to ensure we get enough recommendations
+            if scored.tweet_id in candidate_lookup:
                 rec = candidate_lookup[scored.tweet_id]
                 rec["score"] = scored.score
                 rec["reasoning"] = scored.reasoning
@@ -181,9 +199,9 @@ def score_tweets_node(state: AgentState) -> Dict[str, Any]:
         # Sort by score descending
         recommendations = sorted(recommendations, key=lambda x: x["score"], reverse=True)
         
-        # Take top N recommendations (e.g., top 5)
-        top_n = min(5, len(recommendations))
-        return {"recommendations": recommendations[:top_n]}
+        # Ensure we return at least 10 recommendations if available
+        top_n = max(10, min(10, len(recommendations))) 
+        return {"recommendations": recommendations[:max(10, 10)]}
         
     except Exception as e:
         print(f"Error during scoring: {e}")
@@ -200,9 +218,9 @@ def format_output_node(state: AgentState) -> Dict[str, Any]:
         return state
         
     for i, rec in enumerate(recommendations, 1):
-        print(f"{i}. Score: {rec.get('score', '?')}/10 | Source: {rec.get('url', rec.get('id', '?'))}")
+        print(f"{i}. Score: {rec.get('score', '?')}/10 | Source: {rec.get('link', rec.get('entryId', '?'))}")
         print(f"Reasoning: {rec.get('reasoning', '')}")
-        print(f"Text: {rec.get('text', '')}")
+        print(f"Text: {rec.get('tweet', '')}")
         print("-" * 50)
         
     return state
@@ -244,5 +262,6 @@ if __name__ == "__main__":
         "candidate_tweets": [], 
         "recommendations": []
     })
-    
     print("\nAgent finished execution!")
+    with open('data/data.json', 'w') as file:
+        json.dump(final_state, file, indent=4)
