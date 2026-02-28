@@ -2,7 +2,8 @@ import requests
 import json
 import os
 from dotenv import load_dotenv
-from helper.getParsedTweets import get_parsed_tweets
+from tweets_recommender.helper.getParsedTweets import get_parsed_tweets
+
 load_dotenv()
 
 # ================= EXTERNAL CONFIGURATION OBJECT =================
@@ -12,25 +13,22 @@ SESSION_CONFIG = {
     "csrf_token": os.getenv('CSRF_TOKEN'),
     "guest_id": os.getenv('GUEST_ID'),
     "twid": os.getenv('TWITTER_ID'),
-    "cf_bm_cookie": os.getenv('CF_BM_COOKIE'),
-    "client_transaction_id": os.getenv('CLIENT_TRANSACTION_ID'),
+    "cf_bm_cookie": os.getenv('CF_BM_COOKIE_BOOKMARKS'),
+    "client_transaction_id": os.getenv('CLIENT_TRANSACTION_ID_BOOKMARKS'),
     "user_agent": os.getenv('USER_AGENT')
 }
-# ================================================================
+# ================================================================  
 
-def make_home_timeline_request(config=None):
+def get_twitter_bookmarks(config=None):
     if config is None:
         config = SESSION_CONFIG
-    # This specific endpoint uses GET with URL parameters
-    url = "https://x.com/i/api/graphql/MpnCeE0hy8m5eWobPx8euw/HomeTimeline"
+    query_id = "ynC-aMV_XSM_nEmtj_L3-Q"
+    url = f"https://x.com/i/api/graphql/{query_id}/Bookmarks"
 
-    # These match the parameters in your provided curl URL
     params = {
         "variables": json.dumps({
             "count": 20,
-            "includePromotedContent": True,
-            "requestContext": "launch",
-            "withCommunity": True
+            "includePromotedContent": True
         }),
         "features": json.dumps({
             "rweb_video_screen_enabled": False,
@@ -75,7 +73,7 @@ def make_home_timeline_request(config=None):
         "accept": "*/*",
         "authorization": f"Bearer {config.get('auth_bearer', '')}",
         "content-type": "application/json",
-        "referer": "https://x.com/home",
+        "referer": "https://x.com/i/bookmarks",
         "user-agent": config.get('user_agent', ''),
         "x-csrf-token": config.get('csrf_token', ''),
         "x-client-transaction-id": config.get('client_transaction_id', ''),
@@ -92,7 +90,6 @@ def make_home_timeline_request(config=None):
         "__cf_bm": config.get('cf_bm_cookie', ''),
     }
 
-    # Use GET request for this specific endpoint
     response = requests.get(url, headers=headers, cookies=cookies, params=params)
     if response.status_code == 200:
         return get_parsed_tweets(response.json())

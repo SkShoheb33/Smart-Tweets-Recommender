@@ -65,7 +65,7 @@ class CORSRequestHandler(http.server.SimpleHTTPRequestHandler):
 
                 
                 # Import here to avoid circular imports if any, and only load agent when needed
-                from agent import run_agent
+                from tweets_recommender.agent import run_agent
                 
                 # Run the agent with the dynamically provided config
                 final_state = run_agent(config)

@@ -1,4 +1,4 @@
-from helper.getValueBFS import get_value_bfs
+from tweets_recommender.helper.getValueBFS import get_value_bfs
 
 def get_parsed_tweets(data):
     parsed_tweets = []

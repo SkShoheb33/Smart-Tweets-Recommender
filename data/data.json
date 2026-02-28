@@ -1,318 +1,74 @@
 {
-    "bookmarks": [
-        {
-            "entryId": "tweet-2027067567018533185",
-            "sortIndex": "1858211998122702523",
-            "created_at": "Thu Feb 26 17:05:43 +0000 2026",
-            "created_by": "sciencegirl",
-            "tweet": "A stunning peacock spreading its colorful feathers\n\n https://t.co/yMbaTCJzSW",
-            "hashtags": [],
-            "link": "https://x.com/MrLaalpotato/status/2027044712071528876/video/1",
-            "nlikes": 199,
-            "nreplies": 21,
-            "nretweets": 44
-        },
-        {
-            "entryId": "tweet-2027074055942373684",
-            "sortIndex": "1858211957101746779",
-            "created_at": "Thu Feb 26 17:31:30 +0000 2026",
-            "created_by": "stats_feed",
-            "tweet": "\ud83d\udee2\ufe0f Largest Oil Producer\n\n1990s: \ud83c\uddf8\ud83c\udde6\ud83c\uddf8\ud83c\udde6\ud83c\uddf8\ud83c\udde6\ud83c\uddf8\ud83c\udde6\ud83c\uddf8\ud83c\udde6\ud83c\uddf8\ud83c\udde6\ud83c\uddf8\ud83c\udde6\ud83c\uddf8\ud83c\udde6\ud83c\uddf8\ud83c\udde6\ud83c\uddf8\ud83c\udde6\n2000s: \ud83c\uddf8\ud83c\udde6\ud83c\uddf8\ud83c\udde6\ud83c\uddf8\ud83c\udde6\ud83c\uddf8\ud83c\udde6\ud83c\uddf8\ud83c\udde6\ud83c\uddf8\ud83c\udde6\ud83c\uddf7\ud83c\uddfa\ud83c\uddf8\ud83c\udde6\ud83c\uddf7\ud83c\uddfa\ud83c\uddf7\ud83c\uddfa\n2010s: \ud83c\uddf8\ud83c\udde6\ud83c\uddf8\ud83c\udde6\ud83c\uddf8\ud83c\udde6\ud83c\uddf8\ud83c\udde6\ud83c\uddf8\ud83c\udde6\ud83c\uddf8\ud83c\udde6\ud83c\uddfa\ud83c\uddf8\ud83c\uddfa\ud83c\uddf8\ud83c\uddfa\ud83c\uddf8\ud83c\uddfa\ud83c\uddf8\n2020s: \ud83c\uddfa\ud83c\uddf8\ud83c\uddfa\ud83c\uddf8\ud83c\uddfa\ud83c\uddf8\ud83c\uddfa\ud83c\uddf8\ud83c\uddfa\ud83c\uddf8",
-            "hashtags": [],
-            "link": "http://youtube.com/@stats_feed",
-            "nlikes": 486,
-            "nreplies": 25,
-            "nretweets": 26
-        }
-    ],
-    "user_profile": "The user has diverse interests, appreciating both the aesthetic beauty of nature, specifically vibrant wildlife like peacocks, and factual analysis of global economic and geopolitical trends, particularly within the energy sector. They seem to enjoy content that is visually striking or presents data clearly and concisely, indicating an appreciation for both visual appeal and informative, data-driven insights.",
-    "search_queries": [
-        "wildlife photography beautiful",
-        "global oil production data",
-        "energy geopolitics analysis"
-    ],
-    "candidate_tweets": [
-        {
-            "entryId": "tweet-2027070725115543727",
-            "tweet": "Try Grokipedia - the only source of information that is most accurate on the internet and is constantly being updated in real-time by the smartest AI to achieve the Truth\n\nThe one thing that makes it so different is that the accuracy is achieved by people + Grok AI https://t.co/XjtAofR5Mf",
-            "created_at": "Thu Feb 26 17:18:16 +0000 2026",
-            "created_by": "XFreeze",
-            "link": "https://x.com/XFreeze/status/2027070725115543727/photo/1",
-            "metrics": {
-                "likes": 45,
-                "retweets": 8,
-                "replies": 20
-            },
-            "score": 7,
-            "reasoning": "The tweet discusses an AI-powered information source focused on accuracy and real-time updates, which aligns with the user's interest in factual and data-driven insights and technical topics."
-        },
-        {
-            "entryId": "tweet-2026869592383988088",
-            "tweet": "Why tf does Google overview say Baby Keem is dead????? https://t.co/9eaj3kwhuS",
-            "created_at": "Thu Feb 26 03:59:02 +0000 2026",
-            "created_by": "tervisscoot",
-            "link": "https://x.com/tervisscoot/status/2026869592383988088/photo/1",
-            "metrics": {
-                "likes": 14117,
-                "retweets": 136,
-                "replies": 375
-            },
-            "score": 1,
-            "reasoning": "This tweet is a casual query about a celebrity's status on Google, which does not align with the user's stated interests in nature, economics, or data analysis."
-        },
-        {
-            "entryId": "tweet-2027011704232509909",
-            "tweet": "Alonso in Melbourne https://t.co/JL0Au49Evi",
-            "created_at": "Thu Feb 26 13:23:45 +0000 2026",
-            "created_by": "f1trollofficial",
-            "link": "https://x.com/f1trollofficial/status/2027011704232509909/video/1",
-            "metrics": {
-                "likes": 28431,
-                "retweets": 2034,
-                "replies": 156
-            },
-            "score": 1,
-            "reasoning": "This tweet is a specific sports reference to Formula 1, which does not relate to the user's interests in nature, economics, or data."
-        },
-        {
-            "entryId": "tweet-2026935878720041386",
-            "tweet": "valid reason https://t.co/0ZyqclDyXV",
-            "created_at": "Thu Feb 26 08:22:26 +0000 2026",
-            "created_by": "catwithaura",
-            "link": "https://x.com/catwithaura/status/2026935878720041386/video/1",
-            "metrics": {
-                "likes": 21617,
-                "retweets": 1287,
-                "replies": 14
-            },
-            "score": 1,
-            "reasoning": "This tweet is too generic and lacks context to connect with the user's specific interests in nature, economics, or data."
-        },
-        {
-            "entryId": "tweet-2026881272606289955",
-            "tweet": "https://t.co/viAP45CZ77",
-            "created_at": "Thu Feb 26 04:45:27 +0000 2026",
-            "created_by": "7i__g",
-            "link": "https://x.com/7i__g/status/2026881272606289955/photo/1",
-            "metrics": {
-                "likes": 114495,
-                "retweets": 15531,
-                "replies": 131
-            },
-            "score": 1,
-            "reasoning": "This tweet consists only of a link without any descriptive text, making it impossible to determine its relevance to the user's interests."
-        },
-        {
-            "entryId": "tweet-2026957590249279842",
-            "tweet": "Comunicado oficial:\n\nCristiano Ronaldo invierte en la UD Almer\u00eda como parte del consorcio propietario del club liderado por SMC Group https://t.co/0hGGWguEc0",
-            "created_at": "Thu Feb 26 09:48:43 +0000 2026",
-            "created_by": "U_D_Almeria",
-            "link": "https://x.com/U_D_Almeria/status/2026957590249279842/photo/1",
-            "metrics": {
-                "likes": 52536,
-                "retweets": 4988,
-                "replies": 1072
-            },
-            "score": 3,
-            "reasoning": "While it mentions investment, this tweet focuses on sports club ownership rather than global economic or geopolitical trends, making it less relevant to the user's specific interests."
-        },
-        {
-            "entryId": "tweet-2027042236894994500",
-            "tweet": "Democrats accidentally created one of the best ads I've ever seen\n\nPlay this on repeat until the election\n\n https://t.co/2dV3n0URlK",
-            "created_at": "Thu Feb 26 15:25:04 +0000 2026",
-            "created_by": "EndWokeness",
-            "link": "https://x.com/PatAdams96/status/2027017444590604712/video/1",
-            "metrics": {
-                "likes": 30805,
-                "retweets": 5588,
-                "replies": 377
-            },
-            "score": 4,
-            "reasoning": "This tweet is political commentary about an advertisement, which is only tangentially related to the user's interest in geopolitical trends and not in a factual or analytical manner."
-        },
-        {
-            "entryId": "tweet-2027001970028875830",
-            "tweet": "https://t.co/nipOCovbI2",
-            "created_at": "Thu Feb 26 12:45:04 +0000 2026",
-            "created_by": "luscielia",
-            "link": "https://x.com/luscielia/status/2027001970028875830/photo/1",
-            "metrics": {
-                "likes": 15843,
-                "retweets": 1764,
-                "replies": 47
-            },
-            "score": 1,
-            "reasoning": "This tweet consists only of a link without any descriptive text, making it impossible to determine its relevance to the user's interests."
-        },
-        {
-            "entryId": "tweet-2026824914116985122",
-            "tweet": "\ufd3f\u0625\u0650\u0646\u064e\u0651 \u0627\u0644\u0644\u064e\u0651\u0647\u064e \u0648\u064e\u0645\u064e\u0644\u064e\u0627\u0626\u0650\u0643\u064e\u062a\u064e\u0647\u064f \u064a\u064f\u0635\u064e\u0644\u064f\u0651\u0648\u0646\u064e \u0639\u064e\u0644\u064e\u0649 \u0627\u0644\u0646\u064e\u0651\u0628\u0650\u064a\u0650\u0651 \u064a\u064e\u0627 \u0623\u064e\u064a\u064f\u0651\u0647\u064e\u0627 \u0627\u0644\u064e\u0651\u0630\u0650\u064a\u0646\u064e \u0622\u0645\u064e\u0646\u064f\u0648\u0627 \u0635\u064e\u0644\u064f\u0651\u0648\u0627 \u0639\u064e\u0644\u064e\u064a\u0652\u0647\u0650 \u0648\u064e\u0633\u064e\u0644\u0650\u0651\u0645\u064f\u0648\u0627 \u062a\u064e\u0633\u0652\u0644\u0650\u064a\u0645\u064b\u0627\ufd3e https://t.co/uuthU0g7ze",
-            "created_at": "Thu Feb 26 01:01:30 +0000 2026",
-            "created_by": "Mahfil_E_Durood",
-            "link": "https://x.com/Mahfil_E_Durood/status/2026824914116985122/video/1",
-            "metrics": {
-                "likes": 2396,
-                "retweets": 624,
-                "replies": 64
-            },
-            "score": 1,
-            "reasoning": "This tweet contains religious scripture, which does not align with the user's stated interests in nature, economics, or data analysis."
-        },
-        {
-            "entryId": "tweet-2027062481160392722",
-            "tweet": "https://t.co/qemtugXMcm",
-            "created_at": "Thu Feb 26 16:45:31 +0000 2026",
-            "created_by": "ohanxiety",
-            "link": "https://x.com/ohanxiety/status/2027062481160392722/photo/1",
-            "metrics": {
-                "likes": 150,
-                "retweets": 42,
-                "replies": 3
-            },
-            "score": 1,
-            "reasoning": "This tweet consists only of a link without any descriptive text, making it impossible to determine its relevance to the user's interests."
-        }
-    ],
     "recommendations": [
         {
-            "entryId": "tweet-2027070725115543727",
-            "tweet": "Try Grokipedia - the only source of information that is most accurate on the internet and is constantly being updated in real-time by the smartest AI to achieve the Truth\n\nThe one thing that makes it so different is that the accuracy is achieved by people + Grok AI https://t.co/XjtAofR5Mf",
-            "created_at": "Thu Feb 26 17:18:16 +0000 2026",
-            "created_by": "XFreeze",
-            "link": "https://x.com/XFreeze/status/2027070725115543727/photo/1",
-            "metrics": {
-                "likes": 45,
-                "retweets": 8,
-                "replies": 20
-            },
-            "score": 7,
-            "reasoning": "The tweet discusses an AI-powered information source focused on accuracy and real-time updates, which aligns with the user's interest in factual and data-driven insights and technical topics."
+            "entryId": "tweet-2027740182682996825",
+            "tweet": "Claude FULL COURSE 1 HOUR (Build & Automate Anything) https://t.co/ZYn6Uwvbrg",
+            "link": "https://x.com/JulianGoldieSEO/status/2010180225108508760/video/1",
+            "score": 10,
+            "reasoning": "This tweet is highly relevant as it focuses on an AI tool (\"Claude\") and its practical applications for building and automation, which aligns perfectly with the user's interest in AI tools for productivity and business growth."
         },
         {
-            "entryId": "tweet-2027042236894994500",
-            "tweet": "Democrats accidentally created one of the best ads I've ever seen\n\nPlay this on repeat until the election\n\n https://t.co/2dV3n0URlK",
-            "created_at": "Thu Feb 26 15:25:04 +0000 2026",
-            "created_by": "EndWokeness",
-            "link": "https://x.com/PatAdams96/status/2027017444590604712/video/1",
-            "metrics": {
-                "likes": 30805,
-                "retweets": 5588,
-                "replies": 377
-            },
-            "score": 4,
-            "reasoning": "This tweet is political commentary about an advertisement, which is only tangentially related to the user's interest in geopolitical trends and not in a factual or analytical manner."
+            "entryId": "tweet-2027686093890719909",
+            "tweet": "I'm 27.\n\nI've made $3 million selling ebooks online.\n\n\u2022 No writing.\n\u2022 No audience.\n\u2022 No fancy sales funnel.\n\nHere's the boring system that can make you at least $2,945 in the next 72 hours:\n\n1. Find an unsexy, urgent problem\n\nGo on Reddit. People complain there all day. https://t.co/ObmbmuMBK6",
+            "link": "https://x.com/sohrabhossain39/status/2027686093890719909/photo/1",
+            "score": 10,
+            "reasoning": "This tweet is highly relevant as it discusses making money online, a \"boring system\" for earning, and specifically mentions using \"Reddit\" for finding problems, which aligns perfectly with the user's interest in entrepreneurship, side projects, marketing strategies, and platforms like Reddit."
         },
         {
-            "entryId": "tweet-2026957590249279842",
-            "tweet": "Comunicado oficial:\n\nCristiano Ronaldo invierte en la UD Almer\u00eda como parte del consorcio propietario del club liderado por SMC Group https://t.co/0hGGWguEc0",
-            "created_at": "Thu Feb 26 09:48:43 +0000 2026",
-            "created_by": "U_D_Almeria",
-            "link": "https://x.com/U_D_Almeria/status/2026957590249279842/photo/1",
-            "metrics": {
-                "likes": 52536,
-                "retweets": 4988,
-                "replies": 1072
-            },
-            "score": 3,
-            "reasoning": "While it mentions investment, this tweet focuses on sports club ownership rather than global economic or geopolitical trends, making it less relevant to the user's specific interests."
+            "entryId": "tweet-2027753093023338982",
+            "tweet": "Hidden AI Tools That Feel Like Superpowers.\n\n1. https://t.co/xtHFZHpQd5 \u2013 Writing like a human\n\n2. https://t.co/8IM5OB4FTK \u2013 Presentation \n\n3. https://t.co/C9Oiwq92f4 \u2013 Image cleaner\n\n4. https://t.co/gClNUVL3QF \u2013 Logo maker\n\n5. https://t.co/wUE3XZgQZk \u2013 Smart notes\n\n6. https://t.co/7ldIsaRK6O",
+            "link": "https://x.com/Ejaz_bashir1/status/2027753093023338982/photo/1",
+            "score": 10,
+            "reasoning": "This tweet provides a list of \"Hidden AI Tools\" for various purposes like writing, presentation, image cleaning, and logo making, directly aligning with the user's strong interest in AI tools for productivity and creative tasks."
         },
         {
-            "entryId": "tweet-2026869592383988088",
-            "tweet": "Why tf does Google overview say Baby Keem is dead????? https://t.co/9eaj3kwhuS",
-            "created_at": "Thu Feb 26 03:59:02 +0000 2026",
-            "created_by": "tervisscoot",
-            "link": "https://x.com/tervisscoot/status/2026869592383988088/photo/1",
-            "metrics": {
-                "likes": 14117,
-                "retweets": 136,
-                "replies": 375
-            },
-            "score": 1,
-            "reasoning": "This tweet is a casual query about a celebrity's status on Google, which does not align with the user's stated interests in nature, economics, or data analysis."
+            "entryId": "tweet-2027704082992087472",
+            "tweet": "120 Mind-Blowing AI Tools;\n\n1. Ideas\n\n- YOU\n- Claude\n- ChatGPT\n- Perplexity\n- Bing Chat\n\n2. Presentation\n\n- Prezi\n- Pitch\n- PopAi\n- Slides AI\n- Slidebean\n\n3. Website\n\n- Dora\n- Wegic\n- 10Web\n- Framer\n- Durable\n\n4. Writing\n\n- Rytr\n- Jasper\n- Copy AI\n- Textblaze\n- Writesonic\n\n5. AI https://t.co/TJH457mBXY",
+            "link": "https://x.com/pushkersoni72/status/2027704082992087472/photo/1",
+            "score": 10,
+            "reasoning": "This tweet is extremely relevant as it lists a large number of AI tools categorized by function (ideas, presentation, website, writing), directly catering to the user's core interest in AI tools."
         },
         {
-            "entryId": "tweet-2027011704232509909",
-            "tweet": "Alonso in Melbourne https://t.co/JL0Au49Evi",
-            "created_at": "Thu Feb 26 13:23:45 +0000 2026",
-            "created_by": "f1trollofficial",
-            "link": "https://x.com/f1trollofficial/status/2027011704232509909/video/1",
-            "metrics": {
-                "likes": 28431,
-                "retweets": 2034,
-                "replies": 156
-            },
-            "score": 1,
-            "reasoning": "This tweet is a specific sports reference to Formula 1, which does not relate to the user's interests in nature, economics, or data."
+            "entryId": "tweet-2027662742740734006",
+            "tweet": "\ud835\udd17\ud835\udd25\ud835\udd22 \ud835\udd09\ud835\udd2f\ud835\udd22\ud835\udd22 \ud835\udd19\ud835\udd30 \ud835\udd13\ud835\udd1e\ud835\udd26\ud835\udd21 \ud835\udd04\u2111 \ud835\udd17\ud835\udd2c\ud835\udd2c\ud835\udd29\ud835\udd30: \u2193\u2193\n\n1. Research\nPaid: https://t.co/MV6mZPKsy0\nFree: https://t.co/crZXUWhdnQ\n\n2. YouTube Video Translator\nPaid: https://t.co/saluBFx59c\nFree: https://t.co/8hHPghqeOz..\n\n3. Watermark Remover\nPaid: https://t.co/PaC8iOcL7J\nFree: https://t.co/fXFmfJfXJs",
+            "link": "https://x.com/nikola_mr64990/status/2027662742740734006/photo/1",
+            "score": 10,
+            "reasoning": "This tweet directly compares free and paid AI tools across different categories like research, translation, and image editing, which is highly relevant to the user's interest in practical AI applications and tools."
         },
         {
-            "entryId": "tweet-2026935878720041386",
-            "tweet": "valid reason https://t.co/0ZyqclDyXV",
-            "created_at": "Thu Feb 26 08:22:26 +0000 2026",
-            "created_by": "catwithaura",
-            "link": "https://x.com/catwithaura/status/2026935878720041386/video/1",
-            "metrics": {
-                "likes": 21617,
-                "retweets": 1287,
-                "replies": 14
-            },
-            "score": 1,
-            "reasoning": "This tweet is too generic and lacks context to connect with the user's specific interests in nature, economics, or data."
+            "entryId": "tweet-2027579515845890198",
+            "tweet": "Still paying for tools you can get FREE? \n\nHere\u2019s the cheat code smart creators are using in 2026:\n\nWhy pay for:\nHubSpot \u2192 When you can use HubSpot CRM Free\nCanva Pro \u2192 When free tools + AI can do the job\nGrammarly Premium \u2192 When QuillBot exists\nMidjourney \u2192 When RunwayML is https://t.co/2jWl3GOXg1",
+            "link": "https://x.com/akhilesh9235/status/2027579515845890198/photo/1",
+            "score": 10,
+            "reasoning": "This tweet is highly relevant as it focuses on free alternatives to popular tools, including AI-powered ones, aligning with the user's interest in productivity tools and cost-effective solutions for business and creative work."
         },
         {
-            "entryId": "tweet-2026881272606289955",
-            "tweet": "https://t.co/viAP45CZ77",
-            "created_at": "Thu Feb 26 04:45:27 +0000 2026",
-            "created_by": "7i__g",
-            "link": "https://x.com/7i__g/status/2026881272606289955/photo/1",
-            "metrics": {
-                "likes": 114495,
-                "retweets": 15531,
-                "replies": 131
-            },
-            "score": 1,
-            "reasoning": "This tweet consists only of a link without any descriptive text, making it impossible to determine its relevance to the user's interests."
+            "entryId": "tweet-2027618066394488922",
+            "tweet": "Want to automate your work in 60 minutes?\n\nN8N FULL COURSE (1 Hour)\n- Build workflows\n- Connect APIs\n- Automate repetitive tasks\n- Integrate AI\n\nOne tool. Unlimited automation.\nhttps://t.co/xsecWxSmRV",
+            "link": "https://x.com/JulianGoldieSEO/status/2020072746865369160/video/1",
+            "score": 10,
+            "reasoning": "This tweet is highly relevant as it focuses on automating work, building workflows, connecting APIs, and integrating AI, directly aligning with the user's interest in AI tools and productivity for business growth."
         },
         {
-            "entryId": "tweet-2027001970028875830",
-            "tweet": "https://t.co/nipOCovbI2",
-            "created_at": "Thu Feb 26 12:45:04 +0000 2026",
-            "created_by": "luscielia",
-            "link": "https://x.com/luscielia/status/2027001970028875830/photo/1",
-            "metrics": {
-                "likes": 15843,
-                "retweets": 1764,
-                "replies": 47
-            },
-            "score": 1,
-            "reasoning": "This tweet consists only of a link without any descriptive text, making it impossible to determine its relevance to the user's interests."
+            "entryId": "tweet-2027775705946398836",
+            "tweet": "Claude can explain any complex topic like a genius professor.\n\nHere are 12 Claude prompts that will help you learn anything 10\u00d7 faster:\n(save it) https://t.co/5QWEHQ7YuZ",
+            "link": "https://x.com/HeyZoyaKhan/status/2027775705946398836/photo/1",
+            "score": 10,
+            "reasoning": "This tweet focuses on \"Claude,\" an AI tool, and provides practical prompts for faster learning, which is highly relevant to the user's interest in AI tools and educational content."
         },
         {
-            "entryId": "tweet-2026824914116985122",
-            "tweet": "\ufd3f\u0625\u0650\u0646\u064e\u0651 \u0627\u0644\u0644\u064e\u0651\u0647\u064e \u0648\u064e\u0645\u064e\u0644\u064e\u0627\u0626\u0650\u0643\u064e\u062a\u064e\u0647\u064f \u064a\u064f\u0635\u064e\u0644\u064f\u0651\u0648\u0646\u064e \u0639\u064e\u0644\u064e\u0649 \u0627\u0644\u0646\u064e\u0651\u0628\u0650\u064a\u0650\u0651 \u064a\u064e\u0627 \u0623\u064e\u064a\u064f\u0651\u0647\u064e\u0627 \u0627\u0644\u064e\u0651\u0630\u0650\u064a\u0646\u064e \u0622\u0645\u064e\u0646\u064f\u0648\u0627 \u0635\u064e\u0644\u064f\u0651\u0648\u0627 \u0639\u064e\u0644\u064e\u064a\u0652\u0647\u0650 \u0648\u064e\u0633\u064e\u0644\u0650\u0651\u0645\u064f\u0648\u0627 \u062a\u064e\u0633\u0652\u0644\u0650\u064a\u0645\u064b\u0627\ufd3e https://t.co/uuthU0g7ze",
-            "created_at": "Thu Feb 26 01:01:30 +0000 2026",
-            "created_by": "Mahfil_E_Durood",
-            "link": "https://x.com/Mahfil_E_Durood/status/2026824914116985122/video/1",
-            "metrics": {
-                "likes": 2396,
-                "retweets": 624,
-                "replies": 64
-            },
-            "score": 1,
-            "reasoning": "This tweet contains religious scripture, which does not align with the user's stated interests in nature, economics, or data analysis."
+            "entryId": "tweet-2027645493711671682",
+            "tweet": "Instead of watching a 2-hour movie, watch this masterclass on AI coding\nhttps://t.co/sfBemuTixz",
+            "link": "https://x.com/rileybrown_ai/status/1914139690791481766/video/1",
+            "score": 9,
+            "reasoning": "This tweet directly relates to AI and coding, offering a \"masterclass\" which aligns with the user's interest in learning and practical application of AI tools."
         },
         {
-            "entryId": "tweet-2027062481160392722",
-            "tweet": "https://t.co/qemtugXMcm",
-            "created_at": "Thu Feb 26 16:45:31 +0000 2026",
-            "created_by": "ohanxiety",
-            "link": "https://x.com/ohanxiety/status/2027062481160392722/photo/1",
-            "metrics": {
-                "likes": 150,
-                "retweets": 42,
-                "replies": 3
-            },
-            "score": 1,
-            "reasoning": "This tweet consists only of a link without any descriptive text, making it impossible to determine its relevance to the user's interests."
+            "entryId": "tweet-2027678383258419323",
+            "tweet": "15 AI websites for getting a remote job\n\n1. Applyish .com\n\n2. FixMyResume .xyz\n\n3. HnResumeToJobs .com\n\n4. Huru .ai\n\n5. Interviewai .me\n\n6. Interviewsby .ai\n\n7. Majorgen .com\n\n8. MatchThatRoleAI .com\n\n9. Metaview .ai\n\n10. https://t.co/ffyrihncH2\n\nAdd more\ud83d\udc47 https://t.co/XCUbTDZ225",
+            "link": "https://x.com/nrqa__/status/2027678383258419323/photo/1",
+            "score": 9,
+            "reasoning": "This tweet provides a list of AI websites for finding remote jobs, which is relevant to someone interested in AI and potentially new career opportunities or talent acquisition in the startup/tech space."
         }
     ]
 }
