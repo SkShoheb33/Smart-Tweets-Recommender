@@ -20,15 +20,12 @@ class UserProfile(BaseModel):
     preferred_topics: List[str] = Field(description="Specific topics the user frequently reads about")
     tone: str = Field(description="The general tone or style of content the user prefers")
 
-class RecommendedTweet(BaseModel):
+class LLMScoredTweet(BaseModel):
     entryId: str = Field(description="The ID of the candidate tweet")
-    tweet: str = Field(description="The text content of the tweet")
-    link: str = Field(description="The URL link to the tweet")
     score: int = Field(description="Relevance score from 1 to 10")
-    reasoning: str = Field(description="A 1-sentence reasoning for why this tweet was recommended based on the user's profile")
 
-class Recommendations(BaseModel):
-    recommendations: List[RecommendedTweet] = Field(description="List of top recommended tweets")
+class LLMRecommendations(BaseModel):
+    recommendations: List[LLMScoredTweet] = Field(description="List of top recommended tweets")
 
 def run_agent(config: Dict[str, Any] = None):
     if config is None:
@@ -130,25 +127,32 @@ def run_agent(config: Dict[str, Any] = None):
         description="Scores candidate tweets against a user profile.",
         instruction="""
             You are a helpful agent that curates a personalized Twitter feed.
-            You will be given a User Profile and a list of Candidate Tweets.
+            You will be given a User Profile and a list of Candidate Tweets containing only 'entryId' and 'tweet' text.
             
-            Evaluate each candidate tweet against the user profile. Score each tweet's relevance to the user from 1 to 10, and provide a 1-sentence reasoning. 
+            Evaluate each candidate tweet against the user profile. Score each tweet's relevance to the user from 1 to 10. 
             Be lenient, if a tweet even tangentially relates to the user's interests, give it a score of 5 or higher.
-            Select the top 10 recommended tweets, and return them.
+            Select the top 10 recommended tweets, and return their entryIds and scores.
         """,
-        output_schema=Recommendations
+        output_schema=LLMRecommendations
     )
 
     print("\n--- [Step 4] Scoring Tweets ---")
     
     async def score_tweets():
         runner = InMemoryRunner(agent=scorer_agent)
+        
+        # Strip down the timeline data to save tokens
+        stripped_timeline = [
+            {"entryId": t.get("entryId"), "tweet": t.get("tweet")} 
+            for t in timeline_data if t.get("tweet")
+        ]
+        
         prompt = f"""
             User Profile:
             {profile.model_dump_json(indent=2)}
             
             Candidate Tweets:
-            {json.dumps(timeline_data)}
+            {json.dumps(stripped_timeline)}
             
             Please score the tweets and return the top recommendations.
         """
@@ -179,9 +183,25 @@ def run_agent(config: Dict[str, Any] = None):
         match = re.search(r'```(?:json)?\n(.*?)\n```', output_text, re.DOTALL)
         clean_json = match.group(1) if match else output_text
             
-        validated_model = Recommendations.model_validate_json(clean_json)
-        final_state = validated_model.model_dump()
-        print(f"Successfully generated {len(final_state.get('recommendations', []))} recommendations.")
+        validated_model = LLMRecommendations.model_validate_json(clean_json)
+        llm_scores = validated_model.model_dump()["recommendations"]
+        
+        # Re-map the scores back to the full original tweet objects
+        final_recommendations = []
+        timeline_dict = {t["entryId"]: t for t in timeline_data}
+        
+        for scored_item in llm_scores:
+            tweet_id = scored_item["entryId"]
+            if tweet_id in timeline_dict:
+                full_tweet = timeline_dict[tweet_id]
+                full_tweet["score"] = scored_item["score"]
+                final_recommendations.append(full_tweet)
+                
+        # Sort by score descending
+        final_recommendations = sorted(final_recommendations, key=lambda x: x.get("score", 0), reverse=True)
+                
+        final_state = {"recommendations": final_recommendations}
+        print(f"Successfully generated {len(final_recommendations)} recommendations.")
         
     except Exception as e:
         print(f"Error during scoring phase: {e}")

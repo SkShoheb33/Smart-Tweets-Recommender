@@ -75,7 +75,6 @@ $(document).ready(function () {
                     <div class="inline-block bg-[#1d9bf0] text-white px-2.5 py-1 rounded-full text-[13px] font-bold mb-3">Score: ${rec.score}/10</div>
                     <div class="text-[#8899a6] text-[14px] mb-2 font-medium">@${rec.created_by}</div>
                     <div class="text-[15px] leading-relaxed mb-3 break-words whitespace-pre-wrap text-[#e1e8ed]">${rec.tweet}</div>
-                    <div class="text-[13px] text-[#8899a6] mb-3 bg-[#1d9bf0]/10 px-3 py-2.5 rounded-lg leading-relaxed"><strong>Why:</strong> ${rec.reasoning}</div>
                     ${rec.link ? `<a href="${rec.link}" target="_blank" class="inline-block text-[#1d9bf0] no-underline text-[14px] font-medium hover:underline">View Post</a>` : ''}
                 </div>
             `).join('');
