@@ -1,0 +1,51 @@
+{
+  "manifest_version": 3,
+  "name": "Twitter Agent",
+  "version": "1.0",
+  "description": "A Twitter agent that can recommend tweets to users",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage",
+    "cookies",
+    "webRequest"
+  ],
+  "host_permissions": [
+    "http://localhost:8000/*",
+    "*://x.com/*",
+    "*://twitter.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "service-worker-loader.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "js": [
+        "assets/content.jsx-D2UlMCbU.js"
+      ],
+      "matches": [
+        "*://x.com/*",
+        "*://twitter.com/*"
+      ],
+      "css": [
+        "assets/content-Lmp3a5Ev.css"
+      ]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "matches": [
+        "*://twitter.com/*",
+        "*://x.com/*"
+      ],
+      "resources": [
+        "assets/content.jsx-D2UlMCbU.js"
+      ],
+      "use_dynamic_url": false
+    }
+  ]
+}

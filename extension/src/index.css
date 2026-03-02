@@ -1,0 +1,4 @@
+/* Don't import tailwind base to avoid overriding Twitter's styles */
+/* @tailwind base; */
+@tailwind components;
+@tailwind utilities;

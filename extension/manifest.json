@@ -19,12 +19,13 @@
         "default_popup": "popup.html"
     },
     "background": {
-        "service_worker": "background.js"
+        "service_worker": "background.js",
+        "type": "module"
     },
     "content_scripts": [
         {
             "matches": ["*://x.com/*", "*://twitter.com/*"],
-            "js": ["jquery-4.0.0.min.js", "tailwind.js", "content.js"]
+            "js": ["src/content.jsx"]
         }
     ]
 }
