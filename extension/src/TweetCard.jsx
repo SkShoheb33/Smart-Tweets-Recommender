@@ -5,7 +5,7 @@ const TweetCard = ({ rec }) => {
   return (
     <article className="px-4 pt-3 pb-2 border-b border-[rgb(47,51,54)] hover:bg-[rgba(255,255,255,0.03)] cursor-pointer transition-colors flex flex-row">
       {/* Avatar column */ }
-      <div className="mr-3 flex-shrink-0">
+      <div className="mr-1 flex-shrink-0">
         <div className="w-10 h-10 rounded-full bg-[#1d9bf0] flex items-center justify-center text-white font-bold text-lg">
           { rec.created_by.charAt(0).toUpperCase() }
         </div>
@@ -55,9 +55,9 @@ const TweetCard = ({ rec }) => {
         </div> */}
 
         {/* Action Buttons */ }
-        <div className="flex items-center justify-between mt-3 text-[#71767b] max-w-[425px]">
+        <div className="flex items-center justify-between mt-2 text-[#71767b] max-w-[425px]">
           <div className="flex items-center group cursor-pointer">
-            <div className="p-2 rounded-full group-hover:bg-[#1d9bf0]/10 group-hover:text-[#1d9bf0] transition-colors">
+            <div className="p-1 rounded-full group-hover:bg-[#1d9bf0]/10 group-hover:text-[#1d9bf0] transition-colors">
               <MessageCircle className="w-4 h-4" />
             </div>
             <span className="text-[13px] px-1 group-hover:text-[#1d9bf0]">
@@ -66,7 +66,7 @@ const TweetCard = ({ rec }) => {
           </div>
 
           <div className="flex items-center group cursor-pointer">
-            <div className="p-2 rounded-full group-hover:bg-[#00ba7c]/10 group-hover:text-[#00ba7c] transition-colors">
+            <div className="p-1 rounded-full group-hover:bg-[#00ba7c]/10 group-hover:text-[#00ba7c] transition-colors">
               <Repeat2 className="w-4 h-4" />
             </div>
             <span className="text-[13px] px-1 group-hover:text-[#00ba7c]">
@@ -75,7 +75,7 @@ const TweetCard = ({ rec }) => {
           </div>
 
           <div className="flex items-center group cursor-pointer">
-            <div className="p-2 rounded-full group-hover:bg-[#f91880]/10 group-hover:text-[#f91880] transition-colors">
+            <div className="p-1 rounded-full group-hover:bg-[#f91880]/10 group-hover:text-[#f91880] transition-colors">
               <Heart className="w-4 h-4" />
             </div>
             <span className="text-[13px] px-1 group-hover:text-[#f91880]">
@@ -84,7 +84,7 @@ const TweetCard = ({ rec }) => {
           </div>
 
           <div className="flex items-center group cursor-pointer">
-            <div className="p-2 rounded-full group-hover:bg-[#1d9bf0]/10 group-hover:text-[#1d9bf0] transition-colors">
+            <div className="p-1 rounded-full group-hover:bg-[#1d9bf0]/10 group-hover:text-[#1d9bf0] transition-colors">
               <BarChart2 className="w-4 h-4" />
             </div>
             <span className="text-[13px] px-1 group-hover:text-[#1d9bf0]">

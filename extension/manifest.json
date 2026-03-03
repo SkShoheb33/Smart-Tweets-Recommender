@@ -3,29 +3,25 @@
     "name": "Twitter Agent",
     "version": "1.0",
     "description": "A Twitter agent that can recommend tweets to users",
-    "permissions": [
-        "activeTab",
-        "scripting",
-        "storage",
-        "cookies",
-        "webRequest"
-    ],
+    "icons": {
+        "128": "icon128.png"
+    },
+    "permissions": ["activeTab", "scripting", "storage", "cookies", "webRequest"],
     "host_permissions": [
         "http://localhost:8000/*",
         "*://x.com/*",
         "*://twitter.com/*"
     ],
     "action": {
+        "default_icon": "icon128.png",
         "default_popup": "popup.html"
     },
     "background": {
         "service_worker": "background.js",
         "type": "module"
     },
-    "content_scripts": [
-        {
-            "matches": ["*://x.com/*", "*://twitter.com/*"],
-            "js": ["src/content.jsx"]
-        }
-    ]
+    "content_scripts": [{
+        "matches": ["*://x.com/*", "*://twitter.com/*"],
+        "js": ["src/content.jsx"]
+    }]
 }
