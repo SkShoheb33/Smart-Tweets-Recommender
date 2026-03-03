@@ -37,7 +37,8 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
             const config = {
                 user_agent: navigator.userAgent,
                 auth_bearer: capturedHeaders.auth_bearer,
-                client_transaction_id: capturedHeaders.client_transaction_id
+                client_transaction_id: capturedHeaders.client_transaction_id,
+                google_api_key: request.googleApiKey // Add the API key here
             };
             
             cookies.forEach(cookie => {

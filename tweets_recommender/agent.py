@@ -24,6 +24,7 @@ class LLMScoredTweet(BaseModel):
     entryId: str = Field(description="The ID of the candidate tweet")
     score: int = Field(description="Relevance score from 1 to 10")
     topic: str = Field(description="The preferred topic this tweet best matches, or 'Other' if it doesn't clearly match one")
+    highlight: str = Field(description="A 1-2 sentence highlight or summary of the tweet explaining why it's recommended")
 
 class LLMRecommendations(BaseModel):
     recommendations: List[LLMScoredTweet] = Field(description="List of top recommended tweets")
@@ -80,6 +81,9 @@ def run_agent(config: Dict[str, Any] = None, status_callback=None):
         return events
 
     try:
+        if "google_api_key" in config and config["google_api_key"]:
+            os.environ["GOOGLE_API_KEY"] = config["google_api_key"]
+            
         profile_events = asyncio.run(build_profile())
         
         # Extract response text
@@ -141,7 +145,7 @@ def run_agent(config: Dict[str, Any] = None, status_callback=None):
             
             Evaluate each candidate tweet against the user profile. Score each tweet's relevance to the user from 1 to 10. 
             Be lenient, if a tweet even tangentially relates to the user's interests, give it a score of 5 or higher.
-            Select the top 10 recommended tweets, and return their entryIds and scores.
+            Select the top 10 recommended tweets, and return their entryIds, scores, matching topic, and a 1-2 sentence highlight summarizing why it is recommended based on their profile.
         """,
         output_schema=LLMRecommendations
     )
@@ -206,6 +210,7 @@ def run_agent(config: Dict[str, Any] = None, status_callback=None):
                 full_tweet = timeline_dict[tweet_id]
                 full_tweet["score"] = scored_item["score"]
                 full_tweet["topic"] = scored_item.get("topic", "Other")
+                full_tweet["highlight"] = scored_item.get("highlight", "")
                 final_recommendations.append(full_tweet)
                 
         # Sort by score descending

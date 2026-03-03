@@ -1,5 +1,5 @@
 import React from 'react';
-import { MessageCircle, Repeat2, Heart, BarChart2, BadgeCheck } from 'lucide-react';
+import { MessageCircle, Repeat2, Heart, BarChart2, BadgeCheck, Bot } from 'lucide-react';
 
 const TweetCard = ({ rec }) => {
   return (
@@ -12,34 +12,47 @@ const TweetCard = ({ rec }) => {
       </div>
 
       {/* Content column */ }
-      <div className="flex flex-col flex-1 pb-1">
+      <div className="flex flex-col flex-1 pb-1 w-full">
         {/* Header (Name, Handle, Time) */ }
-        <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-1 text-[15px]">
-            <span className="font-bold text-[#e7e9ea] hover:underline">@{ rec.created_by }</span>
-            <BadgeCheck className="w-4 h-4 text-[#1d9bf0] shrink-0" />
-            <span className="text-[#71767b]">@{ rec.created_by }</span>
-            <span className="text-[#71767b]">·</span>
-            <span className="text-[#71767b] hover:underline">Now</span>
+        <div className="flex items-end justify-between w-full">
+          <div className="flex items-center justify-between text-[15px] w-full">
+            <div className="flex items-center gap-1">
+              <span className="font-bold text-[#e7e9ea] hover:underline">@{ rec.created_by }</span>
+              <BadgeCheck className="w-4 h-4 text-[#1d9bf0] shrink-0" />
+            </div>
+            <span className="text-[#71767b] hover:underline text-[10px]">{ new Date(rec.created_at).toLocaleString([], { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' }) }</span>
           </div>
         </div>
 
         {/* AI Score Badge */ }
         <div className="mt-1 mb-2 flex items-center gap-2">
-          <span className="inline-block bg-[#1d9bf0]/10 text-[#1d9bf0] px-2 py-0.5 rounded text-[12px] font-bold border border-[#1d9bf0]/20">
-            Agent Match Score: { rec.score }/10
+          <span className="inline-block bg-[#1d9bf0]/10 text-[#1d9bf0] px-2 py-0.5 rounded text-[10px] font-bold border border-[#1d9bf0]/20 text-nowrap">
+            Agent Score: { rec.score }/10
           </span>
           { rec.topic && rec.topic !== "Other" && (
-            <span className="inline-block bg-[rgba(255,255,255,0.05)] text-[#e7e9ea] px-2 py-0.5 rounded text-[12px] font-medium border border-[rgb(47,51,54)]">
+            <span className="inline-block bg-[rgba(255,255,255,0.05)] text-[#e7e9ea] px-2 py-0.5 rounded text-[10px] font-medium border border-[rgb(47,51,54)] text-ellipsis overflow-hidden text-nowrap">
               { rec.topic }
             </span>
           ) }
         </div>
 
+        {/* Agent Highlight */ }
+        { rec.highlight && (
+          <div className="mt-1 mb-2 p-3 rounded-xl bg-[rgba(29,155,240,0.08)] border border-[#1d9bf0]/20">
+            <div className="flex items-center gap-1.5 mb-1.5 text-[#1d9bf0]">
+              <Bot className="w-3.5 h-3.5" />
+              <span className="text-[11px] font-bold uppercase tracking-wider">Why you'll like this</span>
+            </div>
+            <div className="text-[#e7e9ea] text-[14px] leading-relaxed">
+              { rec.highlight }
+            </div>
+          </div>
+        ) }
+
         {/* Tweet Text */ }
-        <div className="text-[#e7e9ea] text-[15px] leading-relaxed whitespace-pre-wrap mt-1">
+        {/* <div className="text-[#e7e9ea] text-[15px] leading-relaxed whitespace-pre-wrap mt-1 opacity-90">
           { rec.tweet }
-        </div>
+        </div> */}
 
         {/* Action Buttons */ }
         <div className="flex items-center justify-between mt-3 text-[#71767b] max-w-[425px]">

@@ -50,7 +50,8 @@ class CORSRequestHandler(http.server.SimpleHTTPRequestHandler):
                     "twid": get_val('twid', 'TWITTER_ID'),
                     "cf_bm_cookie": get_val('cf_bm_cookie', 'CF_BM_COOKIE'),
                     "client_transaction_id": get_val('client_transaction_id', 'CLIENT_TRANSACTION_ID'),
-                    "user_agent": get_val('user_agent', 'USER_AGENT') or 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36'
+                    "user_agent": get_val('user_agent', 'USER_AGENT') or 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36',
+                    "google_api_key": get_val('google_api_key', 'GOOGLE_API_KEY')
                 }
                 
                 from tweets_recommender.agent import run_agent

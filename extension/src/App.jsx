@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import TweetCard from './TweetCard';
-import { RefreshCw, Bot, X, CircleCheck, CircleAlert } from 'lucide-react';
+import { RefreshCw, Bot, X, CircleCheck, CircleAlert, Settings, Key } from 'lucide-react';
 
 const App = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -12,19 +12,38 @@ const App = () => {
   const [agentStatus, setAgentStatus] = useState('');
   const [lastUpdated, setLastUpdated] = useState(null);
   const [serverOnline, setServerOnline] = useState(false);
+  const [googleApiKey, setGoogleApiKey] = useState('');
+  const [showSettings, setShowSettings] = useState(false);
+
+  // Utility function to safely check if extension is still valid
+  const isExtensionValid = () => {
+    try {
+      return !!chrome.runtime?.id;
+    } catch (e) {
+      return false;
+    }
+  };
 
   // Poll server status
   useEffect(() => {
     const checkServer = () => {
-      chrome.runtime.sendMessage({ action: 'check_server' }, (response) => {
-        if (response && response.online) {
-          setServerOnline(true);
-        } else {
-          setServerOnline(false);
-        }
-      });
+      if (!isExtensionValid()) return;
+      
+      try {
+        chrome.runtime.sendMessage({ action: 'check_server' }, (response) => {
+          if (chrome.runtime.lastError) return;
+          
+          if (response && response.online) {
+            setServerOnline(true);
+          } else {
+            setServerOnline(false);
+          }
+        });
+      } catch (e) {
+        // Silently catch context invalidated errors
+      }
     };
-
+    
     checkServer();
     const intervalId = setInterval(checkServer, 5000);
     return () => clearInterval(intervalId);
@@ -32,6 +51,8 @@ const App = () => {
 
   // Listen for SSE messages from background script
   useEffect(() => {
+    if (!isExtensionValid()) return;
+
     const handleMessage = (message) => {
       if (message.type === 'AGENT_STATUS') {
         setAgentStatus(message.status);
@@ -41,15 +62,21 @@ const App = () => {
         if (message.data && message.data.recommendations) {
           setRecommendations(message.data.recommendations);
           setUserProfile(message.data.user_profile);
-
+          
           const now = Date.now();
           setLastUpdated(now);
-
-          chrome.storage.local.set({
-            savedRecommendations: message.data.recommendations,
-            savedUserProfile: message.data.user_profile,
-            lastUpdatedTime: now
-          });
+          
+          try {
+            if (isExtensionValid()) {
+              chrome.storage.local.set({
+                savedRecommendations: message.data.recommendations,
+                savedUserProfile: message.data.user_profile,
+                lastUpdatedTime: now
+              });
+            }
+          } catch (e) {
+            // Silently fail
+          }
         }
       } else if (message.type === 'AGENT_ERROR') {
         setLoading(false);
@@ -58,33 +85,86 @@ const App = () => {
       }
     };
 
-    chrome.runtime.onMessage.addListener(handleMessage);
-    return () => chrome.runtime.onMessage.removeListener(handleMessage);
+    try {
+      chrome.runtime.onMessage.addListener(handleMessage);
+      return () => {
+        try {
+          if (isExtensionValid()) {
+            chrome.runtime.onMessage.removeListener(handleMessage);
+          }
+        } catch (e) {
+          // Silently fail
+        }
+      };
+    } catch (e) {
+      // Silently fail
+    }
   }, []);
 
-  // Load saved recommendations from storage on mount
+  // Load saved recommendations and settings from storage on mount
   useEffect(() => {
-    chrome.storage.local.get(['savedRecommendations', 'savedUserProfile', 'lastUpdatedTime'], (result) => {
-      if (result.savedRecommendations) {
-        setRecommendations(result.savedRecommendations);
+    try {
+      if (isExtensionValid()) {
+        chrome.storage.local.get(['savedRecommendations', 'savedUserProfile', 'lastUpdatedTime', 'googleApiKey'], (result) => {
+          if (chrome.runtime.lastError) return;
+          if (result.savedRecommendations) {
+            setRecommendations(result.savedRecommendations);
+          }
+          if (result.savedUserProfile) {
+            setUserProfile(result.savedUserProfile);
+          }
+          if (result.lastUpdatedTime) {
+            setLastUpdated(result.lastUpdatedTime);
+          }
+          if (result.googleApiKey) {
+            setGoogleApiKey(result.googleApiKey);
+          } else {
+            setShowSettings(true);
+          }
+        });
       }
-      if (result.savedUserProfile) {
-        setUserProfile(result.savedUserProfile);
-      }
-      if (result.lastUpdatedTime) {
-        setLastUpdated(result.lastUpdatedTime);
-      }
-    });
+    } catch (e) {
+      // Silently fail
+    }
   }, []);
+
+  const saveApiKey = (key) => {
+    setGoogleApiKey(key);
+    try {
+      if (isExtensionValid()) {
+        chrome.storage.local.set({ googleApiKey: key });
+      }
+    } catch (e) {
+      // Silently fail
+    }
+    if (key) setShowSettings(false);
+  };
 
   // 2. Fetch recommendations
   const fetchRecommendations = () => {
+    if (!googleApiKey) {
+      setShowSettings(true);
+      return;
+    }
+    
     setLoading(true);
     setError(null);
     setAgentStatus('Starting agent...');
-
-    // We don't wait for a response here anymore, we listen for SSE messages
-    chrome.runtime.sendMessage({ action: 'fetch_recommendations' });
+    
+    try {
+      if (isExtensionValid()) {
+        chrome.runtime.sendMessage({ 
+          action: 'fetch_recommendations',
+          googleApiKey: googleApiKey 
+        });
+      } else {
+        setError('Extension updated. Please refresh the page (F5) to use the new version.');
+        setLoading(false);
+      }
+    } catch (e) {
+      setError('Extension updated. Please refresh the page (F5) to use the new version.');
+      setLoading(false);
+    }
   };
 
   return (
@@ -122,14 +202,6 @@ const App = () => {
               </div>
 
               <div className="flex items-center gap-2">
-                { loading ? (
-                  <span className="relative flex h-2.5 w-2.5">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#1d9bf0] opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#1d9bf0]"></span>
-                  </span>
-                ) : (
-                  <span className={ `w-2.5 h-2.5 rounded-full ${lastUpdated ? 'bg-[#00ba7c]' : 'bg-[#71767b]'}` }></span>
-                ) }
                 <span className="text-[#71767b] text-sm">
                   { loading
                     ? `Agent: ${agentStatus || 'Running...'}`
@@ -201,13 +273,52 @@ const App = () => {
               <Bot className="w-6 h-6 text-[#1d9bf0]" />
               Agent Recommendations
             </h2>
-            <button
-              onClick={ () => setIsSidebarOpen(false) }
-              className="text-[#71767b] hover:text-[#e7e9ea] hover:bg-[rgba(255,255,255,0.1)] p-2 rounded-full transition-colors border-none bg-transparent cursor-pointer flex items-center justify-center"
-            >
-              <X className="w-5 h-5" />
-            </button>
+            <div className="flex items-center gap-2">
+              <button
+                onClick={ () => setShowSettings(!showSettings) }
+                className={`text-[#71767b] hover:text-[#e7e9ea] hover:bg-[rgba(255,255,255,0.1)] p-2 rounded-full transition-colors border-none bg-transparent cursor-pointer flex items-center justify-center ${showSettings ? 'text-[#1d9bf0] bg-[rgba(29,155,240,0.1)]' : ''}`}
+                title="Settings"
+              >
+                <Settings className="w-5 h-5" />
+              </button>
+              <button
+                onClick={ () => setIsSidebarOpen(false) }
+                className="text-[#71767b] hover:text-[#e7e9ea] hover:bg-[rgba(255,255,255,0.1)] p-2 rounded-full transition-colors border-none bg-transparent cursor-pointer flex items-center justify-center"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
           </div>
+
+          {/* Settings Panel */}
+          {showSettings && (
+            <div className="px-4 py-4 border-b border-[rgb(47,51,54)] bg-[rgba(29,155,240,0.02)] shrink-0">
+              <div className="flex flex-col gap-3">
+                <div className="flex items-center gap-2 text-[#1d9bf0]">
+                  <Key className="w-4 h-4" />
+                  <span className="font-bold text-[14px]">Google API Key</span>
+                </div>
+                <p className="text-[13px] text-[#71767b] m-0">
+                  Required to run the Gemini agent. Your key is stored securely in your browser's local storage.
+                </p>
+                <div className="flex gap-2">
+                  <input 
+                    type="password" 
+                    placeholder="AIzaSy..."
+                    value={googleApiKey}
+                    onChange={(e) => setGoogleApiKey(e.target.value)}
+                    className="flex-1 bg-black border border-[rgb(47,51,54)] rounded-md px-3 py-2 text-[14px] text-[#e7e9ea] focus:outline-none focus:border-[#1d9bf0] focus:ring-1 focus:ring-[#1d9bf0]"
+                  />
+                  <button 
+                    onClick={() => saveApiKey(googleApiKey)}
+                    className="bg-[#e7e9ea] hover:bg-[#d7dbdc] text-black px-4 py-2 rounded-md font-bold text-[14px] transition-colors border-none cursor-pointer whitespace-nowrap"
+                  >
+                    Save
+                  </button>
+                </div>
+              </div>
+            </div>
+          )}
 
           {/* Action Bar */ }
           <div className="px-4 py-3 border-b border-[rgb(47,51,54)] flex justify-between items-center bg-[rgba(255,255,255,0.02)] shrink-0">
