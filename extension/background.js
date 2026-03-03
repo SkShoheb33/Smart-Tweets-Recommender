@@ -48,7 +48,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
                 if (cookie.name === '__cf_bm') config.cf_bm_cookie = cookie.value;
             });
             
-            // 2. Send POST request to our local server
+            // 2. Send POST request to our local server and read stream
             fetch('http://localhost:8000/run_agent', {
                 method: 'POST',
                 headers: {
@@ -56,22 +56,72 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
                 },
                 body: JSON.stringify(config)
             })
-            .then(res => {
+            .then(async (res) => {
                 if (!res.ok) {
                     throw new Error(`HTTP error! status: ${res.status}`);
                 }
-                return res.json();
-            })
-            .then(data => {
-                sendResponse({ data: data });
+                
+                const reader = res.body.getReader();
+                const decoder = new TextDecoder('utf-8');
+                let buffer = '';
+
+                while (true) {
+                    const { done, value } = await reader.read();
+                    if (done) break;
+                    
+                    buffer += decoder.decode(value, { stream: true });
+                    const parts = buffer.split('\n\n');
+                    buffer = parts.pop() || ''; // Keep the last incomplete part in the buffer
+
+                    for (const part of parts) {
+                        if (part.startsWith('data: ')) {
+                            try {
+                                const dataStr = part.substring(6);
+                                const parsedData = JSON.parse(dataStr);
+                                
+                                if (parsedData.error) {
+                                    chrome.tabs.sendMessage(sender.tab.id, { 
+                                        type: 'AGENT_ERROR', 
+                                        error: parsedData.error 
+                                    });
+                                } else if (parsedData.status === 'Done') {
+                                    chrome.tabs.sendMessage(sender.tab.id, { 
+                                        type: 'AGENT_DONE', 
+                                        data: parsedData.result 
+                                    });
+                                } else {
+                                    // Send status update to content script
+                                    chrome.tabs.sendMessage(sender.tab.id, { 
+                                        type: 'AGENT_STATUS', 
+                                        status: parsedData.status 
+                                    });
+                                }
+                            } catch (e) {
+                                console.error('Error parsing SSE data:', e, part);
+                            }
+                        }
+                    }
+                }
             })
             .catch(error => {
                 console.error('Error running agent:', error);
-                sendResponse({ error: error.message });
+                chrome.tabs.sendMessage(sender.tab.id, { 
+                    type: 'AGENT_ERROR', 
+                    error: error.message 
+                });
             });
         });
 
         // Return true to indicate we will send a response asynchronously
+        return true;
+    } else if (request.action === 'check_server') {
+        fetch('http://localhost:8000', { method: 'OPTIONS' })
+            .then(res => {
+                sendResponse({ online: res.ok });
+            })
+            .catch(() => {
+                sendResponse({ online: false });
+            });
         return true;
     }
 });

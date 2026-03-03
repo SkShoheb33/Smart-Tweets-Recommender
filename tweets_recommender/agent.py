@@ -23,15 +23,22 @@ class UserProfile(BaseModel):
 class LLMScoredTweet(BaseModel):
     entryId: str = Field(description="The ID of the candidate tweet")
     score: int = Field(description="Relevance score from 1 to 10")
+    topic: str = Field(description="The preferred topic this tweet best matches, or 'Other' if it doesn't clearly match one")
 
 class LLMRecommendations(BaseModel):
     recommendations: List[LLMScoredTweet] = Field(description="List of top recommended tweets")
 
-def run_agent(config: Dict[str, Any] = None):
+def run_agent(config: Dict[str, Any] = None, status_callback=None):
     if config is None:
         config = {}
 
-    print("--- [Step 1] Fetching Bookmarks ---")
+    def update_status(status_msg):
+        if status_callback:
+            status_callback(status_msg)
+        else:
+            print(f"Status: {status_msg}")
+
+    update_status("Getting bookmarks...")
     try:
         bookmarks = get_twitter_bookmarks(config)
         # Limit to 50 to avoid token overflow
@@ -44,13 +51,14 @@ def run_agent(config: Dict[str, Any] = None):
     # If no bookmarks, we can't really build a profile or make personalized recommendations
     if not bookmarks_data:
         print("No bookmarks found. Returning empty recommendations.")
-        empty_state = {"recommendations": []}
+        empty_state = {"recommendations": [], "user_profile": None}
         os.makedirs('data', exist_ok=True)
         with open('data/data.json', 'w', encoding='utf-8') as file:
             json.dump(empty_state, file, indent=4, ensure_ascii=False)
         return empty_state
 
     # -- Agent 1: Profile Builder --
+    update_status("Analyzing user profile...")
     profile_builder_agent = Agent(
         model='gemini-2.5-flash',
         name='profile_builder',
@@ -102,6 +110,7 @@ def run_agent(config: Dict[str, Any] = None):
         # Fallback profile
         profile = UserProfile(interests=["General Technology"], preferred_topics=["Tech News"], tone="Informative")
 
+    update_status("Getting tweets...")
     print("\n--- [Step 3] Fetching Candidate Tweets ---")
     try:
         timeline_tweets = make_home_timeline_request(config)
@@ -114,13 +123,14 @@ def run_agent(config: Dict[str, Any] = None):
 
     if not timeline_data:
         print("No timeline tweets found. Returning empty recommendations.")
-        empty_state = {"recommendations": []}
+        empty_state = {"recommendations": [], "user_profile": profile.model_dump() if 'profile' in locals() else None}
         os.makedirs('data', exist_ok=True)
         with open('data/data.json', 'w', encoding='utf-8') as file:
             json.dump(empty_state, file, indent=4, ensure_ascii=False)
         return empty_state
 
     # -- Agent 2: Tweet Scorer --
+    update_status("Recommending tweets...")
     scorer_agent = Agent(
         model='gemini-2.5-flash',
         name='tweet_scorer',
@@ -195,17 +205,18 @@ def run_agent(config: Dict[str, Any] = None):
             if tweet_id in timeline_dict:
                 full_tweet = timeline_dict[tweet_id]
                 full_tweet["score"] = scored_item["score"]
+                full_tweet["topic"] = scored_item.get("topic", "Other")
                 final_recommendations.append(full_tweet)
                 
         # Sort by score descending
         final_recommendations = sorted(final_recommendations, key=lambda x: x.get("score", 0), reverse=True)
                 
-        final_state = {"recommendations": final_recommendations}
+        final_state = {"recommendations": final_recommendations, "user_profile": profile.model_dump() if 'profile' in locals() else None}
         print(f"Successfully generated {len(final_recommendations)} recommendations.")
         
     except Exception as e:
         print(f"Error during scoring phase: {e}")
-        final_state = {"recommendations": []}
+        final_state = {"recommendations": [], "user_profile": profile.model_dump() if 'profile' in locals() else None}
 
     print("\nAgent finished execution!")
 

@@ -25,14 +25,14 @@
   "content_scripts": [
     {
       "js": [
-        "assets/content.jsx-D2UlMCbU.js"
+        "assets/content.jsx-BZL6qalr.js"
       ],
       "matches": [
         "*://x.com/*",
         "*://twitter.com/*"
       ],
       "css": [
-        "assets/content-Lmp3a5Ev.css"
+        "assets/content-CrIPhik0.css"
       ]
     }
   ],
@@ -43,7 +43,7 @@
         "*://x.com/*"
       ],
       "resources": [
-        "assets/content.jsx-D2UlMCbU.js"
+        "assets/content.jsx-BZL6qalr.js"
       ],
       "use_dynamic_url": false
     }

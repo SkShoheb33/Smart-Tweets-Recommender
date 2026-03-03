@@ -22,9 +22,15 @@ def get_parsed_tweets(data):
             'tweet': tweet_text,
             'hashtags': get_value_bfs(tweet, 'hashtags'),
             'link': get_value_bfs(tweet, 'expanded_url'),
-            'nlikes': get_value_bfs(tweet, 'favorite_count'),
-            'nreplies': get_value_bfs(tweet, 'reply_count'),
-            'nretweets': get_value_bfs(tweet, 'retweet_count')
+            'nlikes': get_value_bfs(tweet, 'favorite_count') or 0,
+            'nreplies': get_value_bfs(tweet, 'reply_count') or 0,
+            'nretweets': get_value_bfs(tweet, 'retweet_count') or 0,
+            'nviews': get_value_bfs(tweet, 'ext_views') or get_value_bfs(tweet, 'views') or 0
         }
+        
+        # Extract view count from dict if needed
+        if isinstance(parsed_tweet['nviews'], dict):
+            parsed_tweet['nviews'] = parsed_tweet['nviews'].get('count', 0)
+            
         parsed_tweets.append(parsed_tweet)
     return parsed_tweets

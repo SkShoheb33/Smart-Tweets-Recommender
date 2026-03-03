@@ -36,16 +36,12 @@ class CORSRequestHandler(http.server.SimpleHTTPRequestHandler):
             try:
                 print(f"Received data keys: {data.keys()}")
                 
-                # Helper function to prefer valid non-empty data strings, then fallback to env
                 def get_val(key, env_key):
                     val = data.get(key)
-                    if not val: # handles None and "" (empty string)
+                    if not val:
                         val = os.getenv(env_key)
                     return val
 
-                # We need to construct the config to pass to the agent
-                # Fallback to os.getenv if the client doesn't provide it
-                # Make sure to handle empty strings from frontend like we handle None
                 config = {
                     "auth_bearer": get_val('auth_bearer', 'AUTH_BEARER_TOKEN'),
                     "auth_token": get_val('auth_token', 'AUTH_TOKEN'),
@@ -57,33 +53,40 @@ class CORSRequestHandler(http.server.SimpleHTTPRequestHandler):
                     "user_agent": get_val('user_agent', 'USER_AGENT') or 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36'
                 }
                 
-                print("Config auth token:", config.get("auth_token")[:5] if config.get("auth_token") else "None")
-                print("Config csrf token:", config.get("csrf_token")[:5] if config.get("csrf_token") else "None")
-                print("Config guest id:", config.get("guest_id")[:5] if config.get("guest_id") else "None")
-                print("Config twid:", config.get("twid")[:5] if config.get("twid") else "None")
-                print("Config auth_bearer:", config.get("auth_bearer")[:15] if config.get("auth_bearer") else "None")
-
-                
-                # Import here to avoid circular imports if any, and only load agent when needed
                 from tweets_recommender.agent import run_agent
                 
-                # Run the agent with the dynamically provided config
-                final_state = run_agent(config)
+                # Set up Server-Sent Events headers
+                self.send_response(200)
+                self.send_header('Content-Type', 'text/event-stream')
+                self.send_header('Cache-Control', 'no-cache')
+                self.send_header('Connection', 'keep-alive')
+                self.end_headers()
+
+                def status_callback(msg):
+                    try:
+                        self.wfile.write(f"data: {json.dumps({'status': msg})}\n\n".encode('utf-8'))
+                        self.wfile.flush()
+                    except Exception as e:
+                        print(f"Error sending SSE: {e}")
+
+                final_state = run_agent(config, status_callback=status_callback)
                 
-                # We don't want to return the config back to the client
                 state_to_return = {k: v for k, v in final_state.items() if k != 'config'}
                 
-                self.send_response(200)
-                self.send_header('Content-Type', 'application/json')
-                self.end_headers()
-                self.wfile.write(json.dumps(state_to_return).encode('utf-8'))
+                # Send final result
+                try:
+                    self.wfile.write(f"data: {json.dumps({'status': 'Done', 'result': state_to_return})}\n\n".encode('utf-8'))
+                    self.wfile.flush()
+                except Exception as e:
+                    print(f"Error sending final SSE: {e}")
                 
             except Exception as e:
                 print(f"Error running agent: {e}")
-                self.send_response(500)
-                self.send_header('Content-Type', 'application/json')
-                self.end_headers()
-                self.wfile.write(json.dumps({"error": str(e)}).encode('utf-8'))
+                try:
+                    self.wfile.write(f"data: {json.dumps({'error': str(e)})}\n\n".encode('utf-8'))
+                    self.wfile.flush()
+                except:
+                    pass
         else:
             self.send_response(404)
             self.end_headers()
