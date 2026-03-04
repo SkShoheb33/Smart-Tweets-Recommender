@@ -115,6 +115,83 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
 
         // Return true to indicate we will send a response asynchronously
         return true;
+    } else if (request.action === 'analyze_post') {
+        chrome.cookies.getAll({ url: "https://x.com" }, (cookies) => {
+            const config = {
+                user_agent: navigator.userAgent,
+                auth_bearer: capturedHeaders.auth_bearer,
+                client_transaction_id: capturedHeaders.client_transaction_id,
+                google_api_key: request.googleApiKey,
+                tweet_id: request.tweetId
+            };
+            
+            cookies.forEach(cookie => {
+                if (cookie.name === 'auth_token') config.auth_token = cookie.value;
+                if (cookie.name === 'ct0') config.csrf_token = cookie.value;
+                if (cookie.name === 'twid') config.twid = cookie.value;
+                if (cookie.name === 'guest_id') config.guest_id = cookie.value;
+                if (cookie.name === '__cf_bm') config.cf_bm_cookie = cookie.value;
+            });
+            
+            fetch('http://localhost:8000/analyze_post', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(config)
+            })
+            .then(async (res) => {
+                if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+                
+                const reader = res.body.getReader();
+                const decoder = new TextDecoder('utf-8');
+                let buffer = '';
+
+                while (true) {
+                    const { done, value } = await reader.read();
+                    if (done) break;
+                    
+                    buffer += decoder.decode(value, { stream: true });
+                    const parts = buffer.split('\n\n');
+                    buffer = parts.pop() || '';
+
+                    for (const part of parts) {
+                        if (part.startsWith('data: ')) {
+                            try {
+                                const parsedData = JSON.parse(part.substring(6));
+                                
+                                if (parsedData.error) {
+                                    chrome.tabs.sendMessage(sender.tab.id, { 
+                                        type: 'ANALYZE_ERROR', 
+                                        error: parsedData.error 
+                                    });
+                                } else if (parsedData.status === 'Done') {
+                                    chrome.tabs.sendMessage(sender.tab.id, { 
+                                        type: 'ANALYZE_DONE', 
+                                        data: parsedData.result 
+                                    });
+                                } else {
+                                    chrome.tabs.sendMessage(sender.tab.id, { 
+                                        type: 'ANALYZE_STATUS', 
+                                        status: parsedData.status 
+                                    });
+                                }
+                            } catch (e) {
+                                console.error('Error parsing SSE data:', e, part);
+                            }
+                        }
+                    }
+                }
+            })
+            .catch(error => {
+                console.error('Error running analysis:', error);
+                chrome.tabs.sendMessage(sender.tab.id, { 
+                    type: 'ANALYZE_ERROR', 
+                    error: error.message 
+                });
+            });
+        });
+        return true;
     } else if (request.action === 'check_server') {
         fetch('http://localhost:8000', { method: 'OPTIONS' })
             .then(res => {

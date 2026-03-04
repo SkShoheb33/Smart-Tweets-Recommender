@@ -6,18 +6,18 @@
     "isEntry": true
   },
   "background.js": {
-    "file": "assets/background.js-CehqBEaD.js",
+    "file": "assets/background.js-BrWe1H-3.js",
     "name": "background.js",
     "src": "background.js",
     "isEntry": true
   },
   "src/content.jsx": {
-    "file": "assets/content.jsx-5ED1rMQP.js",
+    "file": "assets/content.jsx-BLe30dAd.js",
     "name": "content.jsx",
     "src": "src/content.jsx",
     "isEntry": true,
     "css": [
-      "assets/content-BCeE1bxn.css"
+      "assets/content-RzT9dKU3.css"
     ]
   }
 }

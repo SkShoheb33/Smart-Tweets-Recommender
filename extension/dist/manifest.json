@@ -29,14 +29,14 @@
   "content_scripts": [
     {
       "js": [
-        "assets/content.jsx-5ED1rMQP.js"
+        "assets/content.jsx-BLe30dAd.js"
       ],
       "matches": [
         "*://x.com/*",
         "*://twitter.com/*"
       ],
       "css": [
-        "assets/content-BCeE1bxn.css"
+        "assets/content-RzT9dKU3.css"
       ]
     }
   ],
@@ -47,7 +47,7 @@
         "*://x.com/*"
       ],
       "resources": [
-        "assets/content.jsx-5ED1rMQP.js"
+        "assets/content.jsx-BLe30dAd.js"
       ],
       "use_dynamic_url": false
     }

@@ -88,6 +88,67 @@ class CORSRequestHandler(http.server.SimpleHTTPRequestHandler):
                     self.wfile.flush()
                 except:
                     pass
+        elif self.path == '/analyze_post':
+            content_length = int(self.headers.get('Content-Length', 0))
+            if content_length > 0:
+                post_data = self.rfile.read(content_length)
+                try:
+                    data = json.loads(post_data)
+                except json.JSONDecodeError:
+                    data = {}
+            else:
+                data = {}
+            
+            try:
+                def get_val(key, env_key):
+                    val = data.get(key)
+                    if not val:
+                        val = os.getenv(env_key)
+                    return val
+
+                config = {
+                    "auth_bearer": get_val('auth_bearer', 'AUTH_BEARER_TOKEN'),
+                    "auth_token": get_val('auth_token', 'AUTH_TOKEN'),
+                    "csrf_token": get_val('csrf_token', 'CSRF_TOKEN'),
+                    "guest_id": get_val('guest_id', 'GUEST_ID'),
+                    "twid": get_val('twid', 'TWITTER_ID'),
+                    "cf_bm_cookie": get_val('cf_bm_cookie', 'CF_BM_COOKIE'),
+                    "client_transaction_id": get_val('client_transaction_id', 'CLIENT_TRANSACTION_ID'),
+                    "user_agent": get_val('user_agent', 'USER_AGENT') or 'Mozilla/5.0',
+                    "google_api_key": get_val('google_api_key', 'GOOGLE_API_KEY')
+                }
+                
+                tweet_id = data.get('tweet_id')
+                if not tweet_id:
+                    raise ValueError("tweet_id is required")
+
+                from tweets_recommender.post_analysis_agent import run_post_analysis_agent
+                
+                self.send_response(200)
+                self.send_header('Content-Type', 'text/event-stream')
+                self.send_header('Cache-Control', 'no-cache')
+                self.send_header('Connection', 'keep-alive')
+                self.end_headers()
+
+                # Notify status
+                self.wfile.write(f"data: {json.dumps({'status': 'Analyzing post...'})}\n\n".encode('utf-8'))
+                self.wfile.flush()
+
+                analysis_result = run_post_analysis_agent(tweet_id, config)
+                
+                if isinstance(analysis_result, dict) and 'error' in analysis_result:
+                    self.wfile.write(f"data: {json.dumps({'error': analysis_result['error']})}\n\n".encode('utf-8'))
+                else:
+                    self.wfile.write(f"data: {json.dumps({'status': 'Done', 'result': analysis_result})}\n\n".encode('utf-8'))
+                self.wfile.flush()
+
+            except Exception as e:
+                print(f"Error running analysis: {e}")
+                try:
+                    self.wfile.write(f"data: {json.dumps({'error': str(e)})}\n\n".encode('utf-8'))
+                    self.wfile.flush()
+                except:
+                    pass
         else:
             self.send_response(404)
             self.end_headers()
